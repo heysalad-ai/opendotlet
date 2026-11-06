@@ -9,6 +9,8 @@
 | [Roadmap](ROADMAP.md) | Required Live, Decisions and Images milestones |
 | [Verification](VERIFICATION.md) | Initial build/runtime evidence and limits |
 | [Blue U-eye correction](U-EYES-FIX.md) | Latest targeted artwork change and checks |
+| [Maintenance](MAINTENANCE.md) | Thursday reviews, updates, release gates and rollback |
+| [Cookbook proposal](COOKBOOK_PROPOSAL.md) | Proposed scope and implementation gates; not yet accepted |
 | [Contributing](../CONTRIBUTING.md) | Focused changes and validation |
 | [Security](../SECURITY.md) | Reporting concerns and credential boundaries |
 | [Third-party notices](../THIRD_PARTY_NOTICES.md) | Board support, LVGL and artwork terms |

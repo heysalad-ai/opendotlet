@@ -14,3 +14,5 @@ If you change light-theme rendering, regenerate and validate that theme too. For
 Never commit full-flash backups, credentials, Wi-Fi settings, device identifiers, local logs or generated build files. Keep upstream notices intact and use original or appropriately licensed artwork in contributions.
 
 Please open an issue before adding a new board, changing the serial protocol or introducing cloud/network dependencies. This prototype currently needs no account or API key.
+
+See the [maintenance lifecycle](docs/MAINTENANCE.md) for Thursday reviews, dependency updates, physical acceptance and release requirements.
