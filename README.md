@@ -1,32 +1,156 @@
+<div align="center">
+
 # OpenDotlet
 
-[![Build firmware](https://github.com/heysalad-ai/opendotlet/actions/workflows/build.yml/badge.svg)](https://github.com/heysalad-ai/opendotlet/actions/workflows/build.yml)
+**A little round display with a lot of personality.**
 
-A little round display with a lot of personality. Built in public by [HeySalad](https://github.com/heysalad-ai).
+Expressive hardware for OpenAI-powered agents, built in public by [HeySalad](https://github.com/heysalad-ai).
 
-OpenDotlet turns a Waveshare ESP32-S3 round touchscreen into a pocket gallery of expressive dots, inspired by OpenAI event stickers. It runs entirely on the board: no account, Wi-Fi configuration or API key needed.
+[![Build firmware](https://github.com/heysalad-ai/opendotlet/actions/workflows/build.yml/badge.svg)](https://github.com/heysalad-ai/opendotlet/actions/workflows/build.yml) [![Code license: MIT](https://img.shields.io/badge/code-MIT-15734b.svg)](LICENSE) [![Hardware: ESP32-S3](https://img.shields.io/badge/hardware-ESP32--S3-252525.svg)](docs/HARDWARE.md)
 
-![Black-background gallery preview](docs/preview-black.png)
+**[Quickstart](docs/QUICKSTART.md) · [Gallery](#gallery-preview) · [Hardware](#hardware) · [Architecture](#project-architecture) · [Roadmap](docs/ROADMAP.md) · [Contribute](CONTRIBUTING.md)**
 
-## What works today
+**Running today: the offline touch gallery.** Live voice, Decisions, image generation and a multi-device UI are planned integrations.
 
-- 28 full-screen views: 24 faces/logos, two sticker-sheet references and two Build graphics.
-- Black and light gallery themes, selected when building. Black is the default.
-- Cyan/blue smile faces use upright **U U** eyes. See the [targeted correction and checks](docs/U-EYES-FIX.md).
-- Automatic playback every seven seconds, tap to advance and pause, hold to toggle playback.
-- USB serial controls: `NEXT`, `PREV`, `PAUSE`, `AUTO`, `STATUS` at 115200 baud.
+<a href="docs/preview-black.png"><img src="docs/preview-black.png" alt="OpenDotlet black-background gallery: 28 exported round-screen views, including upright blue U-eye faces" width="1000"></a>
 
-This first release is the working gallery. Agent integrations, CI status, sound and a custom enclosure are future experiments; they are not implemented here.
+
+</div>
+
+## News
+
+- **6 November 2026:** OpenDotlet is public under HeySalad, with working firmware, pinned dependencies and GitHub build checks.
+- **6 November 2026:** Both individual cyan/blue smile faces now have upright **U U** eyes. Seven asset tests include orientation and unchanged-frame checks.
+- **Next milestone:** a small OpenAI-powered companion connecting **GPT-Live + Decisions + Images** to the physical display. See the [implementation roadmap](docs/ROADMAP.md).
+
+## What is OpenDotlet?
+
+OpenDotlet turns a **Waveshare ESP32-S3-Touch-LCD-1.46** into a pocket gallery of expressive dots. The current release runs entirely on the board: no account, Wi-Fi configuration or API key needed. Tap to advance; hold to toggle the slideshow.
+
+The product direction is a physical interface for agents: talk to a Dotlet, see useful reactions and task status, personalize its appearance, and assign profiles to multiple devices. Those capabilities will be added in verified stages.
+
+- [Build and flash your first Dotlet](docs/QUICKSTART.md)
+- [Make your own face pack](docs/CUSTOMIZATION.md)
+- [Understand the running firmware and proposed platform](docs/ARCHITECTURE.md)
+- [Follow the roadmap](docs/ROADMAP.md)
+
+## Gallery preview
+
+The image above shows the actual exported artwork used by the firmware. It is a contact sheet, not a recording of a physical board. The gallery has been flashed and exercised on the supported board; see [verification](docs/VERIFICATION.md) and the [U-eye correction](docs/U-EYES-FIX.md).
+
+There are **28 full-screen views**: 24 individual faces/logos, two reference sheets and two Build graphics. Choose black or light backgrounds when building.
+
+<details>
+<summary><strong>View the light theme</strong></summary>
+<br>
+<img src="docs/preview-light.png" alt="OpenDotlet light-background gallery with upright U-eye blue faces" width="1000">
+
+The sheet-reference views retain white paper. Themes are build-time choices; runtime switching is planned separately.
+</details>
+
+A real-device video is still to be recorded. The intended demo will show the physical board, touch controls and normal playback. Future voice demonstrations will include audible, captioned footage and identify where the microphone and speaker run.
+
+## OpenAI integrations
+
+These are the **required next integration tracks**, not features already running in this release:
+
+| Integration | Role in OpenDotlet | Status |
+| --- | --- | --- |
+| [GPT-Live](https://developers.openai.com/api/docs/guides/live) | Spoken conversation while backend work runs | Planned |
+| [Decisions API](https://developers.openai.com/api/docs/guides/decisions-voice) | Bounded actions and expressive reactions from live conversation events | Planned |
+| [Images](https://developers.openai.com/api/docs/guides/image-generation) | Personalized faces/scenes with preview and verified installation | Planned |
+| Responses and function calling | Useful tools and confirmed device actions | Planned |
+| Agents, retrieval and optional MCP/plugins | Responsibilities, knowledge and connected tools | Later modules |
+
+The first proposed workflow is a spoken appearance request → bounded decision → generated artwork → reviewed/exported asset → confirmed physical display. Ordinary reactions use cached artwork.
+
+Future API mode will use a dedicated OpenAI project credential on the trusted companion/server. Devices receive separate scoped identities. A project key does not grant access to private GitHub, Gmail or a person's existing ChatGPT dot; those connections require their own authorization.
 
 ## Hardware
 
-Tested on **Waveshare ESP32-S3-Touch-LCD-1.46**, with a 412 × 412 SPD2010 display/touch controller, 16 MB flash and 8 MB octal PSRAM. A USB data cable is enough for this gallery. Other round boards, including the 1.8-inch AMOLED model, need different drivers and are not supported by this build.
+| Part | Current supported configuration |
+| --- | --- |
+| Board | Waveshare ESP32-S3-Touch-LCD-1.46 |
+| Display and touch | SPD2010, 412 × 412 round LCD |
+| Flash / PSRAM | 16 MB / 8 MB octal |
+| Power and programming | USB data cable |
+| Framework | ESP-IDF 5.3.2 + LVGL 8.3.11 |
+| Gallery artwork | Full-screen RGB565, black/light themes |
 
-See [Waveshare's board documentation](https://docs.waveshare.com/ESP32-S3-Touch-LCD-1.46) and [hardware notes](docs/HARDWARE.md).
+The onboard microphone, speaker and battery functionality have **not** been validated by this gallery. Similar-looking boards, including the 1.8-inch AMOLED model, need separate drivers/ports.
 
-## Build
+[Hardware and pin notes](docs/HARDWARE.md) · [Vendor documentation](https://docs.waveshare.com/ESP32-S3-Touch-LCD-1.46)
 
-Install [ESP-IDF v5.3.2](https://docs.espressif.com/projects/esp-idf/en/v5.3.2/esp32s3/get-started/index.html) and activate its environment with the `export.sh` script from your IDF installation. Use Python 3.9 or newer.
+## Feature list
+
+| Feature | Working now | Planned work |
+| --- | --- | --- |
+| Full-screen expressions | 28 exported views | Original white/black/color face families |
+| Touch controls | Tap next/pause; hold auto/pause | Context-aware controls |
+| Playback | Automatic seven-second cadence | Event-driven expressions |
+| Serial interface | `NEXT`, `PREV`, `PAUSE`, `AUTO`, `STATUS` | Bounded companion protocol |
+| Custom artwork | Source atlases and deterministic export | Generated-asset staging and activation |
+| Verification | Asset tests, firmware CI and recorded board checks | Voice, recovery, latency and two-device tests |
+| Voice and tool use | — | GPT-Live, Decisions and useful functions |
+| Device management | — | Pairing, profiles, revocation and explicit session ownership |
+| Images API | — | Generate/edit → preview → export → install |
+
+## Project architecture
+
+**Running gallery**
+
+```mermaid
+flowchart LR
+    Art[Source atlases] --> Export[Export and validate]
+    Export --> Firmware[ESP-IDF firmware]
+    Firmware --> Dotlet[Round display]
+    Touch[Touch / serial] --> Dotlet
+```
+
+**Planned agent platform**
+
+```mermaid
+flowchart TD
+    UI[Setup UI: devices and profiles] --> Gateway[Trusted companion / gateway]
+    Device[Dotlet] <-->|Scoped state, audio and artwork| Gateway
+    Gateway --> Live[GPT-Live]
+    Live --> Decisions[Decisions actions and reactions]
+    Gateway --> Images[Images generation and editing]
+    Gateway --> Tools[Responses and authorized tools]
+```
+
+The gateway and setup UI are not implemented yet. No hosting vendor, web framework or database is required by the current gallery. See the [architecture guide](docs/ARCHITECTURE.md) for component and credential boundaries.
+
+## Tech stack
+
+| Layer | Today | Next stage |
+| --- | --- | --- |
+| Firmware | C, ESP-IDF 5.3.2 | Device protocol and measured audio |
+| Display | LVGL 8.3.11, Waveshare SPD2010 support | Event-driven state and asset activation |
+| Assets | Python, Pillow, RGB565 | Validated generated-art pipeline |
+| Verification | Python unittest, GitHub Actions, serial smoke tool | Session replay, failure and latency checks |
+| Companion / UI | Not implemented | Local gateway first; framework selection pending |
+| OpenAI | Not needed by gallery | Live, Decisions, Images and selected tools |
+
+## Project structure
+
+```text
+opendotlet/
+├── main/                 # Gallery application and generated descriptors
+├── artwork/              # Source atlases, reference sheets and provenance
+├── tools/                # Bootstrap, export, validation and serial checks
+├── tests/                # Artwork regression and failure-path checks
+├── docs/                 # Setup, hardware, architecture and roadmap
+├── .github/workflows/    # Firmware build checks
+├── dependencies.json     # Pinned upstream sources and checksums
+└── sdkconfig.defaults    # Supported ESP32-S3 configuration
+```
+
+Generated assets, downloaded board support, build output and private backups are excluded from Git. Upstream components retain their own notices.
+
+## Quickstart
+
+Activate ESP-IDF 5.3.2, then:
 
 ```sh
 git clone https://github.com/heysalad-ai/opendotlet.git
@@ -40,52 +164,34 @@ idf.py set-target esp32s3
 idf.py build
 ```
 
-The bootstrap downloads checksum-pinned Waveshare board support and LVGL 8.3.11. See [dependencies.json](dependencies.json) and [third-party notices](THIRD_PARTY_NOTICES.md). These downloaded directories are ignored by Git. A network connection is needed for setup; the gallery itself is offline.
-
-For the light theme, regenerate assets and rebuild:
-
-```sh
-python tools/pack_assets.py --theme light
-python tools/validate_assets.py
-idf.py build
-```
-
-![Light-background gallery preview](docs/preview-light.png)
-
-The generated preview is `resources/preview.png`. The two sheet-reference views retain their white paper, even in the black theme. Themes are build-time choices, not an on-device menu.
-
-## Flash and use
-
-Identify your board's serial port (for example `/dev/cu.usbmodem…` on macOS, `/dev/ttyACM0` on Linux, or `COM3` on Windows). Back up any firmware/data you want to keep before replacing it. Flashing writes the bootloader, partition table and gallery app.
+Identify your board's serial port and back up any firmware/data you want to retain before flashing:
 
 ```sh
 idf.py -p YOUR_PORT flash monitor
 ```
 
-Exit the monitor with **Ctrl+]**. The first face appears automatically. Tap once to advance and hold on the new face; long-press to toggle the slideshow. Serial `NEXT`/`PREV` move without changing playback mode; `PAUSE` stops playback and `AUTO` resumes it.
+[Full setup, controls and troubleshooting](docs/QUICKSTART.md) · [Customize artwork](docs/CUSTOMIZATION.md)
 
-An optional serial smoke check resets the board when the port opens, then exercises all views and leaves automatic playback running:
+## Verification and limitations
 
-```sh
-python tools/verify_serial.py --port YOUR_PORT
-```
+- The exact Waveshare 1.46-inch board is the tested target. Other board variants are unverified.
+- CI builds firmware and validates assets; it cannot prove physical touch, appearance or audio quality.
+- Themes and artwork are compiled into firmware. Dynamic downloads, OTA updates, Wi-Fi setup and remote controls are not implemented.
+- Voice, Decisions, Images API, profile management and persistent agents remain planned. No voice latency or battery-runtime result is claimed.
+- The source artwork is a reconstruction, not an official asset pack.
 
-See [verification evidence and limits](docs/VERIFICATION.md). This is an early hardware prototype, not a production device.
+[Initial evidence](docs/VERIFICATION.md) · [Latest artwork checks](docs/U-EYES-FIX.md) · [Security](SECURITY.md)
 
-## Make it your own
+## Contributing
 
-Replace `artwork/atlas-black.png` or `artwork/atlas-light.png` with a **1536 × 1024** atlas: six columns and four rows of 256-pixel square tiles. Keep artwork centered, with a two-pixel inset at tile edges. The exporter trims that inset and scales each tile to 412 × 412. Tile ordering and display names are in `artwork/names.json`.
+Start with documentation, original artwork, supported-board fixes or a focused roadmap milestone. Describe the board and checks you ran. Keep model/API access, secrets, hardware behavior and production readiness explicit.
 
-The final four views are added from the sheet reconstructions in `artwork/`. Edit `tools/pack_assets.py` to replace those views. Frame count and size must stay consistent with the generated LVGL descriptors and available flash.
+[Contribution guide](CONTRIBUTING.md) · [Open an issue](https://github.com/heysalad-ai/opendotlet/issues) · [Roadmap](docs/ROADMAP.md)
 
-The data format is big-endian RGB565 with `CONFIG_LV_COLOR_16_SWAP=y`. Generated assets are intentionally not committed; regenerate them with the exporter.
+## Acknowledgments and license
 
-## Contribute
+[ElatoAI](https://github.com/akdeb/ElatoAI) inspired this product-first repository structure and is an important ESP32 voice-project reference. OpenDotlet's artwork, firmware and proposed OpenAI-only integration plan are documented here independently. OpenDotlet has not been accepted into the OpenAI Cookbook.
 
-See [CONTRIBUTING.md](CONTRIBUTING.md). Small, tested improvements are welcome: better documentation, custom artwork support, accessibility, power measurement and additional board ports. Start a discussion in an issue before changing the hardware abstraction or adding network services.
+HeySalad's original application code is **MIT licensed**. Downloaded vendor support, included artwork and third-party trademarks have separate terms. This independent HeySalad project is not affiliated with or endorsed by OpenAI.
 
-## License and artwork
-
-HeySalad's original code is **MIT licensed**. Downloaded vendor code keeps its own notices and terms; see [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
-
-The included event-inspired artwork is a digital reconstruction, not official OpenAI source artwork. Artwork and trademarks are excluded from the MIT code license. OpenAI names and logos belong to their respective owner; this independent HeySalad project is not affiliated with or endorsed by OpenAI. See [artwork/README.md](artwork/README.md).
+[Code license](LICENSE) · [Artwork terms](artwork/README.md) · [Third-party notices](THIRD_PARTY_NOTICES.md)
