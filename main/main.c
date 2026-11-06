@@ -36,7 +36,7 @@ static void command(const char *line){
  else if(!strcmp(line,"STATUS"))ESP_LOGI(TAG,"STATUS index=%u count=%u auto=%d free_heap=%lu",current,GALLERY_COUNT,automatic,(unsigned long)esp_get_free_heap_size());
 }
 void app_main(void){
- ESP_LOGI(TAG,"OpenDotlet sticker gallery v3 black-background boot");
+ ESP_LOGI(TAG,"OpenDotlet sticker gallery v4 upright U-eyes boot");
  PWR_Init();I2C_Init();ESP_ERROR_CHECK(EXIO_Init());
  LCD_Init();Set_Backlight(65);LVGL_Init();gallery_assets_init();
  lv_obj_t *screen=lv_scr_act();lv_obj_set_style_bg_color(screen,lv_color_hex(0x000000),0);

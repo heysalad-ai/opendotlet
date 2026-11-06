@@ -1,0 +1,12 @@
+{
+  "method": "Built-in ImageGen precise-object edit; only target tiles retained during atlas assembly",
+  "prompt": "Change cyan/light-blue n n eyes in row 2 column 3 and row 3 column 6 into upright U U open at top; preserve other expressions and backgrounds.",
+  "tiles_zero_based": [
+    8,
+    17
+  ],
+  "prompt_set": {
+    "black": "Use case: precise-object-edit. Edit target: this exact 1536x1024 sprite atlas, 6 columns by 4 rows, each tile 256x256. Change ONLY the two cyan/light-blue faces currently showing upside-down n n / arch-shaped eyes: row 2 column 3, and row 3 column 6 (count from 1). Their black eyes MUST be U U: two thick upright U shapes OPEN AT THE TOP, with vertical stems and round curved BOTTOMS, like capital U without serifs. Keep the eye positions, size, thickness, spacing and color, and keep the blue circular faces and their colors exactly unchanged. Do not change any other tile, any logo, any plus, cross, caret or angled eyes. Preserve solid pure black backgrounds and white logos exactly. Preserve tile centers and canvas geometry. Flat digital art. No new elements, no lettering, no outlines, no shadows, no grid modifications. The only edit is turning the two n n pairs into clearly upright U U.",
+    "light": "Use case: precise-object-edit. Edit target: this exact 1536x1024 sprite atlas, 6 columns by 4 rows, each tile 256x256. Change ONLY the two cyan/light-blue faces currently showing upside-down n n / arch-shaped eyes: row 2 column 3, and row 3 column 6 (count from 1). Their black eyes MUST be U U: two thick upright U shapes OPEN AT THE TOP, with vertical stems and round curved BOTTOMS, like capital U without serifs. Keep the eye positions, size, thickness, spacing and color, and keep the blue circular faces and their colors exactly unchanged. Do not change any other tile, any logo, any plus, cross, caret or angled eyes. Preserve all existing light backgrounds and both black/white logo polarities exactly. Preserve tile centers and canvas geometry. Flat digital art. No new elements, no lettering, no outlines, no shadows, no grid modifications. The only edit is turning the two n n pairs into clearly upright U U."
+  }
+}

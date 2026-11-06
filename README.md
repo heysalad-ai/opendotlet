@@ -12,6 +12,7 @@ OpenDotlet turns a Waveshare ESP32-S3 round touchscreen into a pocket gallery of
 
 - 28 full-screen views: 24 faces/logos, two sticker-sheet references and two Build graphics.
 - Black and light gallery themes, selected when building. Black is the default.
+- Cyan/blue smile faces use upright **U U** eyes. See the [targeted correction and checks](docs/U-EYES-FIX.md).
 - Automatic playback every seven seconds, tap to advance and pause, hold to toggle playback.
 - USB serial controls: `NEXT`, `PREV`, `PAUSE`, `AUTO`, `STATUS` at 115200 baud.
 
