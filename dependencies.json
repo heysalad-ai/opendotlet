@@ -1,0 +1,28 @@
+{
+  "waveshare": {
+    "repository": "waveshareteam/ESP32-S3-Touch-LCD-1.46",
+    "commit": "fda89ff2ff32eb1bce561901225c6a36fa684237",
+    "root": "example/ESP-IDF-5.3.2/ESP32-S3-Touch-LCD-1.46-Test/main",
+    "files": {
+      "EXIO/TCA9554PWR.c": "c3cd5c82f69da3021ff91c36e41a6d13abae24d006e6f6b989799070803ce19e",
+      "EXIO/TCA9554PWR.h": "fa2bd37723635e906c02be3ee14c857c5d1d17e8058d24a9c61fd76e5c0a8781",
+      "I2C_Driver/I2C_Driver.c": "a1fa68d62f9d49d7d5cf084a9abee063b9df75f9f1c0081ac68f069414762bf2",
+      "I2C_Driver/I2C_Driver.h": "366cac5ec11c0f76f3762b89bb289879b1d91e396fbbf2e3aa8a6baf7a767174",
+      "LCD_Driver/Display_SPD2010.c": "422c80e2e95d71d75bf0c6788dcd88e20c392a6c52086b55b198d72b02ea1248",
+      "LCD_Driver/Display_SPD2010.h": "49524921b37de4342b3d1d0f2a94b7cfdf51f099564f7cf5004eddee03a5f14b",
+      "LCD_Driver/esp_lcd_spd2010/esp_lcd_spd2010.c": "50a37cb6ccdb6d29dec51459b92c0b55f7c4581351e7b567c7d22d77cfe8d721",
+      "LCD_Driver/esp_lcd_spd2010/esp_lcd_spd2010.h": "7d1b304f4a06a9add4293c97eb8c6cc4e12a599699df4fc744c783566213097c",
+      "LVGL_Driver/LVGL_Driver.c": "4fc6462ca8de274f462f8248a82c6cb97c646220732980323db130bae855c111",
+      "LVGL_Driver/LVGL_Driver.h": "efba4d0bb0f1f918faeb34f6e1d6e8bdf709c4aec915fc900d9581fd0605fc87",
+      "PWR_Key/PWR_Key.c": "9e460dddf7cadaa33c62d1cb27079c1acb6cd2f00651508eb7180449a8729125",
+      "PWR_Key/PWR_Key.h": "fdd3c2acc02d1e51c36d97c5c8c09a866effa8812b6dbf11ca3111ccc253de0a",
+      "Touch_Driver/Touch_SPD2010.c": "a42e51b7f6e11c3d3e16cc5bf35ffa094eede7a00db3a0c77b629c4713cca2ad",
+      "Touch_Driver/Touch_SPD2010.h": "f0bf08272e7078d107e17acbf2c497d63dd0c988a07df122135f18c48bd7f1cd"
+    }
+  },
+  "lvgl": {
+    "version": "8.3.11",
+    "commit": "74d0a816a440eea53e030c4f1af842a94f7ce3d3",
+    "sha256": "9a28236db180e5634c32acaef10ffaf242f2b52c71ad63db82f238b8b76a1936"
+  }
+}
