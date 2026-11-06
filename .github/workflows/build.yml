@@ -24,3 +24,18 @@ jobs:
           python tools/validate_assets.py
           idf.py set-target esp32s3
           idf.py build
+
+  mg24:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+      - uses: arduino/setup-arduino-cli@81d310742121c928ea9c8bbd407b4217b432ae02 # v2
+        with:
+          version: '1.5.1'
+      - name: Install pinned Silicon Labs core
+        run: |
+          arduino-cli core update-index --additional-urls https://siliconlabs.github.io/arduino/package_arduinosilabs_index.json
+          arduino-cli core install SiliconLabs:silabs@4.0.0 --additional-urls https://siliconlabs.github.io/arduino/package_arduinosilabs_index.json
+      - name: Compile MG24 BLE microphone
+        run: bash tools/build-mg24.sh

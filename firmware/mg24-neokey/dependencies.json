@@ -1,0 +1,11 @@
+{
+  "commit": "7e9c53cac8b2c1d33da6a1c109653130801621f1",
+  "url": "https://raw.githubusercontent.com/SiliconLabsSoftware/arduino/7e9c53cac8b2c1d33da6a1c109653130801621f1/libraries/ezWS2812/src/ezWS2812gpio.h",
+  "sha256": "6cffa877d399d9b8c62b88fc946a7e3f2c2626a07b14d533ab4a5e7ccc2a0af2",
+  "modified": false,
+  "arduino_core": {
+    "id": "SiliconLabs:silabs",
+    "version": "4.0.0",
+    "package_index": "https://siliconlabs.github.io/arduino/package_arduinosilabs_index.json"
+  }
+}
