@@ -10,7 +10,7 @@ Expressive hardware for OpenAI-powered agents, built in public by [HeySalad](htt
 
 **[Quickstart](docs/QUICKSTART.md) · [Gallery](#gallery-preview) · [Hardware](#hardware) · [Architecture](#project-architecture) · [Roadmap](docs/ROADMAP.md) · [Contribute](CONTRIBUTING.md)**
 
-**Running today: the offline touch gallery.** Live voice, Decisions, image generation and a multi-device UI are planned integrations.
+**Running today: the offline touch gallery.** A separate [MG24 + NeoKey BLE microphone prototype](firmware/mg24-neokey/README.md) is also available as source. Live agent conversation, Decisions, image generation and a multi-device UI are planned integrations.
 
 <a href="docs/preview-black.png"><img src="docs/preview-black.png" alt="OpenDotlet black-background gallery: 28 exported round-screen views, including upright blue U-eye faces" width="1000"></a>
 
@@ -49,6 +49,12 @@ The sheet-reference views retain white paper. Themes are build-time choices; run
 </details>
 
 A real-device video is still to be recorded. The intended demo will show the physical board, touch controls and normal playback. Future voice demonstrations will include audible, captioned footage and identify where the microphone and speaker run.
+
+## MG24 microphone-button prototype
+
+The [XIAO MG24 Sense + NeoKey firmware](firmware/mg24-neokey/README.md) captures audio while the physical key is held, lights green during recording and transfers the clip over encrypted BLE after release. Capture/transfer was exercised with an external local Mac prototype; the [protocol](docs/MG24-BLE-PROTOCOL.md), build instructions, dependency provenance and remaining hardware checks are included.
+
+This is a separate hardware target from the round display. It requires a compatible receiver; the Mac application and transcription engine are not included in this firmware-only addition. Connecting the display to the microphone and implementing agent conversations remain future work.
 
 ## OpenAI integrations
 
@@ -125,7 +131,8 @@ The gateway and setup UI are not implemented yet. No hosting vendor, web framewo
 
 | Layer | Today | Next stage |
 | --- | --- | --- |
-| Firmware | C, ESP-IDF 5.3.2 | Device protocol and measured audio |
+| Round-display firmware | C, ESP-IDF 5.3.2 | Device protocol and measured audio |
+| Microphone-button firmware | C++, Silicon Labs Arduino core 4.0.0 | Separate MG24 BLE prototype; display integration pending |
 | Display | LVGL 8.3.11, Waveshare SPD2010 support | Event-driven state and asset activation |
 | Assets | Python, Pillow, RGB565 | Validated generated-art pipeline |
 | Verification | Python unittest, GitHub Actions, serial smoke tool | Session replay, failure and latency checks |
@@ -137,6 +144,7 @@ The gateway and setup UI are not implemented yet. No hosting vendor, web framewo
 ```text
 opendotlet/
 ├── main/                 # Gallery application and generated descriptors
+├── firmware/mg24-neokey/  # Separate Silicon Labs BLE microphone target
 ├── artwork/              # Source atlases, reference sheets and provenance
 ├── tools/                # Bootstrap, export, validation and serial checks
 ├── tests/                # Artwork regression and failure-path checks
@@ -174,7 +182,7 @@ idf.py -p YOUR_PORT flash monitor
 
 ## Verification and limitations
 
-- The exact Waveshare 1.46-inch board is the tested target. Other board variants are unverified.
+- For the gallery, the exact Waveshare 1.46-inch board is the tested target. Other display-board variants are unverified. See the separate [MG24 microphone evidence and limits](firmware/mg24-neokey/README.md#evidence).
 - CI builds firmware and validates assets; it cannot prove physical touch, appearance or audio quality.
 - Themes and artwork are compiled into firmware. Dynamic downloads, OTA updates, Wi-Fi setup and remote controls are not implemented.
 - Voice, Decisions, Images API, profile management and persistent agents remain planned. No voice latency or battery-runtime result is claimed.
