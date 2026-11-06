@@ -1,6 +1,6 @@
 # Cookbook proposal: OpenDotlet
 
-Status: **proposal prepared for maintainer scope review; no recipe has been accepted or merged**.
+Status: **submitted for maintainer scope review as [Cookbook issue #3291](https://github.com/openai/openai-cookbook/issues/3291) on 6 November 2026; no recipe has been accepted or merged**.
 
 ## Is your feature request related to a problem? Please describe.
 
