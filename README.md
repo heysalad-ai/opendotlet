@@ -1,5 +1,7 @@
 # OpenDotlet
 
+[![Build firmware](https://github.com/heysalad-ai/opendotlet/actions/workflows/build.yml/badge.svg)](https://github.com/heysalad-ai/opendotlet/actions/workflows/build.yml)
+
 A little round display with a lot of personality. Built in public by [HeySalad](https://github.com/heysalad-ai).
 
 OpenDotlet turns a Waveshare ESP32-S3 round touchscreen into a pocket gallery of expressive dots, inspired by OpenAI event stickers. It runs entirely on the board: no account, Wi-Fi configuration or API key needed.

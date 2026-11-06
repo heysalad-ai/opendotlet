@@ -16,6 +16,10 @@ Initial publication checks, 6 November 2026.
 
 - Connected-board serial smoke: the first capture missed the automatic-playback assertion; two subsequent runs passed READY, all 28 views, pause, wraparound and two automatic advances. Treat this timing-sensitive capture as a diagnostic, not a substitute for physical inspection.
 
+## Clean-checkout CI
+
+The [initial GitHub Actions build](https://github.com/heysalad-ai/opendotlet/actions/runs/42158227770) passed on commit `e9165717b5d7a803a64788a87a20cfc90dbf3b4a`. It bootstrapped dependencies, ran all five tests, regenerated/validated black-theme assets and built the firmware inside the ESP-IDF 5.3.2 container.
+
 ## Limits
 
 Only the Waveshare ESP32-S3-Touch-LCD-1.46 has been physically exercised. CI compiles firmware and validates assets; it cannot validate touch, display appearance, power behavior or other board variants. The vendor support emits a legacy I²C deprecation warning. Battery runtime, audio, Wi-Fi, Bluetooth and long-term reliability have not been tested by this gallery project.
