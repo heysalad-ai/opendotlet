@@ -1,0 +1,42 @@
+/* OpenDotlet — Peel components. Plain CSS on tokens.css variables; class prefix od- */
+.od-btn{display:inline-flex;align-items:center;gap:var(--space-2);font-family:var(--font-sans);font-size:15px;font-weight:600;line-height:20px;
+  padding:var(--space-3) var(--space-6);border:var(--border-sticker) solid var(--ink-fixed);border-radius:var(--radius-md);
+  background:var(--coral);color:var(--ink-fixed);box-shadow:var(--shadow-sticker);cursor:pointer;transition:transform .14s ease-out,box-shadow .14s ease-out}
+.od-btn:hover{box-shadow:var(--shadow-lift);transform:translate(-2px,-2px)}
+.od-btn:active{box-shadow:none;transform:translate(3px,3px)}
+.od-btn:focus-visible{outline:3px solid var(--focus);outline-offset:3px}
+.od-btn--secondary{background:var(--surface-200);color:var(--ink);border-color:var(--outline)}
+.od-btn--quiet{background:transparent;border-color:transparent;box-shadow:none;color:var(--ink);text-decoration:underline;text-underline-offset:3px}
+.od-btn--quiet:hover{box-shadow:none;transform:none}
+.od-btn[disabled]{opacity:.45;box-shadow:none;transform:none;cursor:not-allowed}
+
+.od-chip{display:inline-flex;align-items:center;gap:var(--space-1);height:28px;padding:0 var(--space-3) 0 var(--space-2);
+  border:var(--border-sticker) solid var(--outline);border-radius:var(--radius-pill);background:var(--surface-200);
+  font-family:var(--font-sans);font-size:13px;font-weight:600;letter-spacing:.02em;color:var(--ink)}
+.od-chip svg{width:16px;height:16px;flex:none}
+
+.od-sticker{display:inline-block;border-radius:var(--radius-pill)}
+.od-sticker img{display:block;width:100%;height:100%}
+
+.od-face{position:relative;width:206px;height:206px;border-radius:50%;background:#2a2522;padding:8px;box-sizing:content-box}
+.od-face img{display:block;width:206px;height:206px;border-radius:50%}
+.od-face__tag{position:absolute;left:50%;bottom:-14px;transform:translateX(-50%);background:var(--ink-fixed);color:var(--paper-fixed);
+  font:600 11px/22px var(--font-sans);letter-spacing:.06em;padding:0 10px;border-radius:var(--radius-pill)}
+
+.od-card{background:var(--surface-200);border:var(--border-sticker) solid var(--outline);border-radius:var(--radius-lg);
+  box-shadow:var(--shadow-sticker);padding:var(--space-6);color:var(--ink);font-family:var(--font-sans)}
+.od-card__title{font-family:var(--font-display);font-weight:800;font-size:22px;line-height:28px;margin:0 0 var(--space-2)}
+.od-card__meta{color:var(--ink-muted);font-size:13px}
+
+.od-toast{display:flex;align-items:center;gap:var(--space-3);max-width:420px;background:var(--surface-200);color:var(--ink);
+  border:var(--border-sticker) solid var(--outline);border-radius:var(--radius-md);box-shadow:var(--shadow-sticker);
+  padding:var(--space-3) var(--space-4);font-family:var(--font-sans);font-size:15px;line-height:22px}
+.od-toast img{width:36px;height:36px;flex:none}
+.od-toast b{font-weight:600}
+
+.od-log{background:var(--surface-300);color:var(--ink);border-radius:var(--radius-sm);padding:var(--space-4);
+  font-family:var(--font-mono);font-size:14px;line-height:20px;white-space:pre;overflow:auto}
+.od-log .ok{color:var(--state-done)}
+.od-log .warn{color:var(--state-approval)}
+.od-log .err{color:var(--state-error)}
+.od-log .dim{color:var(--ink-muted)}

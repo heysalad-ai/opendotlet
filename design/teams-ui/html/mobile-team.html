@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>OpenDotlet · Mobile · Team (concept)</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;family=JetBrains+Mono&amp;family=Nunito:wght@800;900&amp;display=swap" rel="stylesheet">
+<style>
+
+body{margin:0}
+*{box-sizing:border-box}
+.od{--coral:#ff5c39;--ink:#14110f;--paper:#fbf7f0;--surface:#ffffff;--backing:#e9e3d6;--muted:#6f6a63;--hair:#d9d2c3;
+ --listen:#1f6fd1;--think:#6a3de8;--approve:#a35f00;--done:#1b7f49;--error:#c4281a;
+ font-family:Inter,system-ui,sans-serif;color:var(--ink);font-size:15px;line-height:22px}
+.od.dark{--ink:#fbf7f0;--paper:#14110f;--surface:#1f1a17;--backing:#2a2522;--muted:#b5ada3;--hair:#3a3430;
+ --listen:#6cb4ff;--think:#b79cff;--approve:#ffb547;--done:#4fd18b;--error:#ff7a6b}
+.disp{font-family:Nunito,ui-rounded,sans-serif;font-weight:900;letter-spacing:-0.01em}
+.h2{font-family:Nunito,ui-rounded,sans-serif;font-weight:800;font-size:20px;line-height:26px;margin:0}
+.lbl{font-size:12px;line-height:16px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.muted{color:var(--muted)}
+.mono{font-family:"JetBrains Mono",ui-monospace,monospace;font-size:13px}
+.btn{display:inline-flex;align-items:center;gap:8px;font:600 14px/20px Inter,sans-serif;padding:10px 18px;border:2px solid #14110f;border-radius:14px;background:#ff5c39;color:#14110f;box-shadow:3px 3px 0 0 #14110f;cursor:pointer;white-space:nowrap}
+.dark .btn{box-shadow:3px 3px 0 0 #000}
+.btn2{display:inline-flex;align-items:center;gap:8px;font:600 14px/20px Inter,sans-serif;padding:10px 18px;border:2px solid var(--ink);border-radius:14px;background:var(--surface);color:var(--ink);cursor:pointer;white-space:nowrap}
+.btn-s{padding:6px 12px;font-size:13px;border-radius:12px}
+.ibtn{display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;border-radius:50%;border:2px solid var(--ink);background:var(--surface);color:var(--ink);cursor:pointer}
+.chip{display:inline-flex;align-items:center;gap:6px;height:26px;padding:0 10px 0 8px;border:2px solid var(--ink);border-radius:999px;background:var(--surface);font-size:12px;font-weight:600;white-space:nowrap}
+.dot{width:8px;height:8px;border-radius:50%;display:inline-block;flex:none}
+.card{background:var(--surface);border:2px solid var(--ink);border-radius:20px;box-shadow:3px 3px 0 0 #14110f}
+.dark .card{box-shadow:3px 3px 0 0 #000}
+.av{position:relative;display:inline-block;flex:none}
+.av img{display:block;width:100%;height:100%}
+.badge{position:absolute;right:-2px;bottom:-2px;width:40%;height:40%;min-width:14px;min-height:14px;border-radius:50%;background:var(--surface);border:2px solid var(--ink);display:flex;align-items:center;justify-content:center}
+.badge svg{width:70%;height:70%}
+.speak{outline:4px solid #ff5c39;outline-offset:4px;border-radius:50%}
+.concept{display:inline-flex;align-items:center;height:22px;padding:0 8px;border-radius:999px;background:var(--backing);color:var(--muted);font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase}
+.bars{display:inline-flex;align-items:flex-end;gap:3px;height:18px}
+.bars i{display:block;width:4px;border-radius:2px;background:#ff5c39}
+
+
+</style>
+
+</head>
+<body>
+<div class="od" style="position: relative; width: 390px; height: 844px; overflow: hidden; background: var(--paper)">
+<header style="padding: 24px 20px 12px; display: flex; align-items: center; justify-content: space-between">
+<img src="../assets/opendotlet-lockup-horizontal.svg" alt="OpenDotlet" style="height: 26px"><span class="concept">Concept</span></header>
+<div style="padding: 0 20px 110px; display: flex; flex-direction: column; gap: 18px">
+<h1 class="disp" style="margin: 4px 0 0; font-size: 30px; line-height: 34px">Good morning.<br>Two things need you.</h1>
+<section class="card" style="padding: 14px; border-color: var(--approve); box-shadow: 3px 3px 0 0 var(--approve); display: flex; flex-direction: column; gap: 10px">
+<p style="margin: 0; display: flex; gap: 10px; align-items: center"><span class="av" style="width: 36px; height: 36px"><img src="../assets/dotlet-sun.svg" alt=""><span class="badge"><svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="7" fill="var(--approve)"/><path d="M6 6.2a2 2 0 1 1 2.8 1.8c-.5.3-.8.6-.8 1.2v.3" fill="none" stroke="var(--surface)" stroke-width="1.8" stroke-linecap="round"/><circle cx="8" cy="11.8" r="1" fill="var(--surface)"/></svg></span></span><span><b>Sol</b> wants to post the launch announcement</span></p>
+<div style="display: flex; gap: 8px"><button class="btn btn-s" style="flex: 1; justify-content: center">Approve</button><button class="btn2 btn-s" style="flex: 1; justify-content: center">Review</button></div>
+<p class="muted" style="margin: 0; font-size: 13px">+1 more · Juno, supplier payment</p></section>
+<section><p class="lbl" style="margin: 0 0 10px">Your team</p><ul style="list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 10px"><li class="card" style="display: flex; gap: 12px; align-items: center; padding: 12px; box-shadow: none"><span class="av" style="width: 48px; height: 48px"><img src="../assets/dotlet-coral.svg" alt="Kofi"><span class="badge"><svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="5.5" fill="none" stroke="var(--ink)" stroke-opacity=".25" stroke-width="2.4"/><path d="M8 2.5A5.5 5.5 0 0 1 13.5 8" fill="none" stroke="var(--ink)" stroke-width="2.4" stroke-linecap="round"/></svg></span></span>
+<span style="flex: 1; min-width: 0"><b style="display: block">Kofi <span class="muted" style="font-weight: 400; font-size: 13px">· Lead · chief of staff</span></b><span class="muted" style="display: block; font-size: 13px; line-height: 18px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis">Planning launch week</span></span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></li><li class="card" style="display: flex; gap: 12px; align-items: center; padding: 12px; box-shadow: none"><span class="av" style="width: 48px; height: 48px"><img src="../assets/dotlet-sky.svg" alt="Mira"><span class="badge"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3.2 3.2L13 4.8" fill="none" stroke="var(--done)" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></span>
+<span style="flex: 1; min-width: 0"><b style="display: block">Mira <span class="muted" style="font-weight: 400; font-size: 13px">· Research</span></b><span class="muted" style="display: block; font-size: 13px; line-height: 18px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis">Competitor scan ready</span></span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></li><li class="card" style="display: flex; gap: 12px; align-items: center; padding: 12px; box-shadow: none"><span class="av" style="width: 48px; height: 48px"><img src="../assets/dotlet-sun.svg" alt="Sol"><span class="badge"><svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="7" fill="var(--approve)"/><path d="M6 6.2a2 2 0 1 1 2.8 1.8c-.5.3-.8.6-.8 1.2v.3" fill="none" stroke="var(--surface)" stroke-width="1.8" stroke-linecap="round"/><circle cx="8" cy="11.8" r="1" fill="var(--surface)"/></svg></span></span>
+<span style="flex: 1; min-width: 0"><b style="display: block">Sol <span class="muted" style="font-weight: 400; font-size: 13px">· Writer</span></b><span class="muted" style="display: block; font-size: 13px; line-height: 18px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis">Launch post needs a yes</span></span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></li><li class="card" style="display: flex; gap: 12px; align-items: center; padding: 12px; box-shadow: none"><span class="av" style="width: 48px; height: 48px"><img src="../assets/dotlet-lilac.svg" alt="Pip"><span class="badge"><svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="5.5" fill="none" stroke="var(--ink)" stroke-opacity=".25" stroke-width="2.4"/><path d="M8 2.5A5.5 5.5 0 0 1 13.5 8" fill="none" stroke="var(--ink)" stroke-width="2.4" stroke-linecap="round"/></svg></span></span>
+<span style="flex: 1; min-width: 0"><b style="display: block">Pip <span class="muted" style="font-weight: 400; font-size: 13px">· Builder</span></b><span class="muted" style="display: block; font-size: 13px; line-height: 18px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis">Building the demo</span></span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></li><li class="card" style="display: flex; gap: 12px; align-items: center; padding: 12px; box-shadow: none"><span class="av" style="width: 48px; height: 48px"><img src="../assets/dotlet-mint.svg" alt="Juno"><span class="badge"><svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="3" fill="var(--muted)"/></svg></span></span>
+<span style="flex: 1; min-width: 0"><b style="display: block">Juno <span class="muted" style="font-weight: 400; font-size: 13px">· Ops & money</span></b><span class="muted" style="display: block; font-size: 13px; line-height: 18px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis">Weekly brief at 9:00 Mon</span></span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></li></ul></section></div>
+<button class="btn" style="position: absolute; right: 20px; bottom: 104px; border-radius: 999px; padding: 14px 20px"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg>Huddle</button>
+<nav aria-label="Tabs" style="position: absolute; left: 0; right: 0; bottom: 0; height: 84px; padding: 10px 18px 24px; display: flex; justify-content: space-around; background: var(--surface); border-top: 2px solid var(--ink)"><a href="#" style="display: flex; flex-direction: column; align-items: center; gap: 2px; font-size: 11px; font-weight: 600; text-decoration: none; color: var(--ink); min-width: 56px"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0"/><path d="M16 4.6a3.5 3.5 0 0 1 0 6.8M18 14a6.5 6.5 0 0 1 3.5 6"/></svg>Team</a><a href="#" style="display: flex; flex-direction: column; align-items: center; gap: 2px; font-size: 11px; font-weight: 600; text-decoration: none; color: var(--muted); min-width: 56px"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 9h14M5 15h14M10 4L8 20M16 4l-2 16"/></svg>Rooms</a><a href="#" style="display: flex; flex-direction: column; align-items: center; gap: 2px; font-size: 11px; font-weight: 600; text-decoration: none; color: var(--muted); min-width: 56px"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg>Huddles</a><a href="#" style="display: flex; flex-direction: column; align-items: center; gap: 2px; font-size: 11px; font-weight: 600; text-decoration: none; color: var(--muted); min-width: 56px"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M2 12h3M19 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"/></svg>Settings</a></nav></div>
+</body>
+</html>

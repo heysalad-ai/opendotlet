@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>OpenDotlet · Mobile · A Dotlet calls you (concept)</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;family=JetBrains+Mono&amp;family=Nunito:wght@800;900&amp;display=swap" rel="stylesheet">
+<style>
+
+body{margin:0}
+*{box-sizing:border-box}
+.od{--coral:#ff5c39;--ink:#14110f;--paper:#fbf7f0;--surface:#ffffff;--backing:#e9e3d6;--muted:#6f6a63;--hair:#d9d2c3;
+ --listen:#1f6fd1;--think:#6a3de8;--approve:#a35f00;--done:#1b7f49;--error:#c4281a;
+ font-family:Inter,system-ui,sans-serif;color:var(--ink);font-size:15px;line-height:22px}
+.od.dark{--ink:#fbf7f0;--paper:#14110f;--surface:#1f1a17;--backing:#2a2522;--muted:#b5ada3;--hair:#3a3430;
+ --listen:#6cb4ff;--think:#b79cff;--approve:#ffb547;--done:#4fd18b;--error:#ff7a6b}
+.disp{font-family:Nunito,ui-rounded,sans-serif;font-weight:900;letter-spacing:-0.01em}
+.h2{font-family:Nunito,ui-rounded,sans-serif;font-weight:800;font-size:20px;line-height:26px;margin:0}
+.lbl{font-size:12px;line-height:16px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.muted{color:var(--muted)}
+.mono{font-family:"JetBrains Mono",ui-monospace,monospace;font-size:13px}
+.btn{display:inline-flex;align-items:center;gap:8px;font:600 14px/20px Inter,sans-serif;padding:10px 18px;border:2px solid #14110f;border-radius:14px;background:#ff5c39;color:#14110f;box-shadow:3px 3px 0 0 #14110f;cursor:pointer;white-space:nowrap}
+.dark .btn{box-shadow:3px 3px 0 0 #000}
+.btn2{display:inline-flex;align-items:center;gap:8px;font:600 14px/20px Inter,sans-serif;padding:10px 18px;border:2px solid var(--ink);border-radius:14px;background:var(--surface);color:var(--ink);cursor:pointer;white-space:nowrap}
+.btn-s{padding:6px 12px;font-size:13px;border-radius:12px}
+.ibtn{display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;border-radius:50%;border:2px solid var(--ink);background:var(--surface);color:var(--ink);cursor:pointer}
+.chip{display:inline-flex;align-items:center;gap:6px;height:26px;padding:0 10px 0 8px;border:2px solid var(--ink);border-radius:999px;background:var(--surface);font-size:12px;font-weight:600;white-space:nowrap}
+.dot{width:8px;height:8px;border-radius:50%;display:inline-block;flex:none}
+.card{background:var(--surface);border:2px solid var(--ink);border-radius:20px;box-shadow:3px 3px 0 0 #14110f}
+.dark .card{box-shadow:3px 3px 0 0 #000}
+.av{position:relative;display:inline-block;flex:none}
+.av img{display:block;width:100%;height:100%}
+.badge{position:absolute;right:-2px;bottom:-2px;width:40%;height:40%;min-width:14px;min-height:14px;border-radius:50%;background:var(--surface);border:2px solid var(--ink);display:flex;align-items:center;justify-content:center}
+.badge svg{width:70%;height:70%}
+.speak{outline:4px solid #ff5c39;outline-offset:4px;border-radius:50%}
+.concept{display:inline-flex;align-items:center;height:22px;padding:0 8px;border-radius:999px;background:var(--backing);color:var(--muted);font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase}
+.bars{display:inline-flex;align-items:flex-end;gap:3px;height:18px}
+.bars i{display:block;width:4px;border-radius:2px;background:#ff5c39}
+
+
+</style>
+
+</head>
+<body>
+<div class="od" style="position: relative; width: 390px; height: 844px; overflow: hidden; background: #3ddc97; display: flex; flex-direction: column; align-items: center; padding: 56px 24px 40px; text-align: center">
+<span class="concept" style="position: absolute; top: 20px; right: 20px; background: rgba(20,17,15,.12); color: #14110f">Concept</span>
+<p style="margin: 0; font-weight: 600; color: #14110f">OpenDotlet · incoming huddle</p>
+<div style="margin-top: 40px"><span class="av" style="width: 168px; height: 168px"><img src="../assets/dotlet-mint.svg" alt="Juno"></span></div>
+<p class="disp" style="margin: 26px 0 0; font-size: 40px; line-height: 44px; color: #14110f">Juno is calling</p>
+<p style="margin: 8px 0 0; color: #14110f">Ops &amp; money · voice Alloy</p>
+<section class="card" style="margin-top: 28px; padding: 16px; text-align: left; width: 100%; --surface: #ffffff; --ink: #14110f">
+<p style="margin: 0 0 6px; display: flex; gap: 8px; align-items: center"><span class="chip"><svg width="14" height="14" viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="7" fill="var(--approve)"/><path d="M6 6.2a2 2 0 1 1 2.8 1.8c-.5.3-.8.6-.8 1.2v.3" fill="none" stroke="var(--surface)" stroke-width="1.8" stroke-linecap="round"/><circle cx="8" cy="11.8" r="1" fill="var(--surface)"/></svg>Needs a yes</span></p>
+<p style="margin: 0; font-size: 15px; line-height: 22px; color: #14110f">"The display supplier wants [AMOUNT] today to hold 100 units for Friday. Shall I pay it?"</p></section>
+<div style="margin-top: 16px; display: flex; gap: 10px; width: 100%"><button class="btn2 btn-s" style="flex: 1; justify-content: center; --surface: #ffffff; --ink: #14110f; color: #14110f"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Approve by text</button><button class="btn2 btn-s" style="flex: 1; justify-content: center; --surface: #ffffff; --ink: #14110f; color: #14110f"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h16v11H9l-5 4z"/></svg>Reply</button></div>
+<div style="margin-top: auto; display: flex; justify-content: space-between; width: 100%; padding: 0 20px">
+<span style="display: flex; flex-direction: column; align-items: center; gap: 8px; font-weight: 600; color: #14110f"><button class="ibtn" style="width: 72px; height: 72px; background: #c4281a; border-color: #14110f; color: #fbf7f0" aria-label="Decline"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 15c5-5 13-5 18 0l-2.5 2.5-3.5-1.5v-3a10 10 0 0 0-6 0v3L5.5 17.5z"/></svg></button>Later</span>
+<span style="display: flex; flex-direction: column; align-items: center; gap: 8px; font-weight: 600; color: #14110f"><button class="ibtn" style="width: 72px; height: 72px; background: #14110f; border-color: #14110f; color: #fbf7f0" aria-label="Answer"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg></button>Answer</span></div>
+<p style="margin: 18px 0 0; font-size: 12px; color: #14110f">Juno only calls for approvals. Change this in Juno › Permissions.</p></div>
+</body>
+</html>

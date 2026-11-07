@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>OpenDotlet · Desk Dotlet in a huddle (concept)</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;family=JetBrains+Mono&amp;family=Nunito:wght@800;900&amp;display=swap" rel="stylesheet">
+<style>
+
+body{margin:0}
+*{box-sizing:border-box}
+.od{--coral:#ff5c39;--ink:#14110f;--paper:#fbf7f0;--surface:#ffffff;--backing:#e9e3d6;--muted:#6f6a63;--hair:#d9d2c3;
+ --listen:#1f6fd1;--think:#6a3de8;--approve:#a35f00;--done:#1b7f49;--error:#c4281a;
+ font-family:Inter,system-ui,sans-serif;color:var(--ink);font-size:15px;line-height:22px}
+.od.dark{--ink:#fbf7f0;--paper:#14110f;--surface:#1f1a17;--backing:#2a2522;--muted:#b5ada3;--hair:#3a3430;
+ --listen:#6cb4ff;--think:#b79cff;--approve:#ffb547;--done:#4fd18b;--error:#ff7a6b}
+.disp{font-family:Nunito,ui-rounded,sans-serif;font-weight:900;letter-spacing:-0.01em}
+.h2{font-family:Nunito,ui-rounded,sans-serif;font-weight:800;font-size:20px;line-height:26px;margin:0}
+.lbl{font-size:12px;line-height:16px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.muted{color:var(--muted)}
+.mono{font-family:"JetBrains Mono",ui-monospace,monospace;font-size:13px}
+.btn{display:inline-flex;align-items:center;gap:8px;font:600 14px/20px Inter,sans-serif;padding:10px 18px;border:2px solid #14110f;border-radius:14px;background:#ff5c39;color:#14110f;box-shadow:3px 3px 0 0 #14110f;cursor:pointer;white-space:nowrap}
+.dark .btn{box-shadow:3px 3px 0 0 #000}
+.btn2{display:inline-flex;align-items:center;gap:8px;font:600 14px/20px Inter,sans-serif;padding:10px 18px;border:2px solid var(--ink);border-radius:14px;background:var(--surface);color:var(--ink);cursor:pointer;white-space:nowrap}
+.btn-s{padding:6px 12px;font-size:13px;border-radius:12px}
+.ibtn{display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;border-radius:50%;border:2px solid var(--ink);background:var(--surface);color:var(--ink);cursor:pointer}
+.chip{display:inline-flex;align-items:center;gap:6px;height:26px;padding:0 10px 0 8px;border:2px solid var(--ink);border-radius:999px;background:var(--surface);font-size:12px;font-weight:600;white-space:nowrap}
+.dot{width:8px;height:8px;border-radius:50%;display:inline-block;flex:none}
+.card{background:var(--surface);border:2px solid var(--ink);border-radius:20px;box-shadow:3px 3px 0 0 #14110f}
+.dark .card{box-shadow:3px 3px 0 0 #000}
+.av{position:relative;display:inline-block;flex:none}
+.av img{display:block;width:100%;height:100%}
+.badge{position:absolute;right:-2px;bottom:-2px;width:40%;height:40%;min-width:14px;min-height:14px;border-radius:50%;background:var(--surface);border:2px solid var(--ink);display:flex;align-items:center;justify-content:center}
+.badge svg{width:70%;height:70%}
+.speak{outline:4px solid #ff5c39;outline-offset:4px;border-radius:50%}
+.concept{display:inline-flex;align-items:center;height:22px;padding:0 8px;border-radius:999px;background:var(--backing);color:var(--muted);font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase}
+.bars{display:inline-flex;align-items:flex-end;gap:3px;height:18px}
+.bars i{display:block;width:4px;border-radius:2px;background:#ff5c39}
+
+
+</style>
+
+</head>
+<body>
+<div class="od" style="width: 640px; height: 844px; background: #e9e3d6; padding: 40px; display: flex; flex-direction: column; align-items: center; gap: 24px; text-align: center">
+<span class="concept" style="align-self: flex-end; background: #fbf7f0">Mockup · not shipped firmware</span>
+<div style="width: 420px; height: 420px; border-radius: 50%; background: #2a2522; padding: 22px; box-shadow: 6px 6px 0 0 #14110f">
+<img src="../assets/state-listening-412.svg" alt="Round display showing the listening face with sound bars on the peel" style="display: block; width: 376px; height: 376px; border-radius: 50%"></div>
+<p class="disp" style="margin: 0; font-size: 30px; line-height: 34px">Kofi is speaking</p>
+<p style="margin: 0; max-width: 480px">During a huddle the Desk Dotlet becomes the face of whoever holds the mic: their character colour, their eyes, sound bars on the peel. Tap the screen to raise your hand; press and hold to mute.</p>
+<div style="display: flex; gap: 18px; margin-top: 8px">
+<figure style="margin: 0; display: flex; flex-direction: column; align-items: center; gap: 8px; font-size: 13px; font-weight: 600"><img src="../assets/state-working-412.svg" alt="" style="width: 96px; height: 96px; border-radius: 50%; border: 6px solid #2a2522">Between calls:<br>the Lead's status</figure>
+<figure style="margin: 0; display: flex; flex-direction: column; align-items: center; gap: 8px; font-size: 13px; font-weight: 600"><img src="../assets/state-approval-412.svg" alt="" style="width: 96px; height: 96px; border-radius: 50%; border: 6px solid #2a2522">A Dotlet<br>needs your yes</figure></div></div>
+</body>
+</html>
