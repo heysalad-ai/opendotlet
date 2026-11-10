@@ -27,3 +27,9 @@ ESP-IDF and its included components retain their upstream licenses. It is not ve
 ## Artwork
 
 See `artwork/README.md`. Event-inspired reconstructions and OpenAI marks are not included in the MIT code license. No official sponsorship or endorsement is implied.
+
+## Silicon Labs MG24 microphone target
+
+`firmware/mg24-neokey/neokey_ble/ezWS2812gpio.h` is unmodified from Silicon Labs' Arduino repository at commit `7e9c53cac8b2c1d33da6a1c109653130801621f1`. The source retains the MIT licence and copyright (c) 2024 Silicon Laboratories Inc. Exact source URL and SHA-256 are recorded in `firmware/mg24-neokey/dependencies.json`.
+
+The separately installed Silicon Labs Arduino core 4.0.0 supplies `SilabsMicrophoneAnalog`, the BLE stack and other SDK components. Their upstream licences remain applicable. Core packages, compiler/debugger binaries and the development Mac companion are not redistributed here.

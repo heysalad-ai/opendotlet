@@ -1,6 +1,6 @@
 # Verification
 
-Initial publication checks, 6 November 2026.
+Initial gallery-publication checks, 6 November 2026. The separate [MG24 microphone target](../firmware/mg24-neokey/README.md#evidence) records its own later build and hardware evidence.
 
 ## Locally observed
 

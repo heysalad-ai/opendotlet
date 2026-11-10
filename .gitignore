@@ -21,3 +21,8 @@
 __pycache__/
 .venv/
 .DS_Store
+
+# Firmware source publication only
+*.hex
+recordings/
+models/
