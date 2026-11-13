@@ -45,7 +45,7 @@ final class KeyboardStore: ObservableObject {
   private var polling: Task<Void, Never>?
   private var started = false
   private let root = FileManager.default.urls(for: .applicationSupportDirectory, in: .userDomainMask)[0]
-    .appendingPathComponent("OpenDotlet/Keyboard")
+    .appendingPathComponent(Bundle.main.object(forInfoDictionaryKey: "OpenDotletSupportSubdirectory") as? String ?? "OpenDotlet/Keyboard")
   private let session: URLSession = {
     let config = URLSessionConfiguration.ephemeral
     config.timeoutIntervalForRequest = 3
@@ -92,7 +92,7 @@ final class KeyboardStore: ObservableObject {
     if let runtime = Bundle.main.resourceURL?.appendingPathComponent("Runtime/opendotlet-host"),
        FileManager.default.isExecutableFile(atPath: runtime.path) {
       p.executableURL = runtime
-      p.arguments = ["serve"]
+      p.arguments = ["serve", "--data", root.path]
     } else {
       p.executableURL = executable
       p.arguments = [base.appendingPathComponent("tools/dotlet.py").path, "serve", "--workspace", workspace]

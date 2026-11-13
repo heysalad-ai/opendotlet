@@ -45,7 +45,7 @@ def main():
         shutil.copytree(ROOT/'assets/Peel',resources/'Peel')
         shutil.copy2(ROOT/'assets/AppIcon.icns',resources/'AppIcon.icns')
         shutil.copy2(ROOT/'macOS/NICEDECK-LICENSE',resources/'NICEDECK-LICENSE')
-        info={'CFBundleName':'OpenDotlet','CFBundleDisplayName':'OpenDotlet','CFBundleIdentifier':'com.heysalad.opendotlet.mac','CFBundleExecutable':'OpenDotlet','CFBundlePackageType':'APPL','CFBundleIconFile':'AppIcon','CFBundleShortVersionString':'0.6.0','CFBundleVersion':'7','LSMinimumSystemVersion':'14.0','NSHighResolutionCapable':True,'NSPrincipalClass':'NSApplication','OpenDotletPortable':True,'NSBluetoothAlwaysUsageDescription':'Optional development device support.'}
+        info={'CFBundleName':'OpenDotlet','CFBundleDisplayName':'OpenDotlet','CFBundleIdentifier':'com.heysalad.opendotlet.mac','CFBundleExecutable':'OpenDotlet','CFBundlePackageType':'APPL','CFBundleIconFile':'AppIcon','CFBundleShortVersionString':'0.6.0','CFBundleVersion':'7','LSMinimumSystemVersion':'14.0','NSHighResolutionCapable':True,'NSPrincipalClass':'NSApplication','OpenDotletPortable':True,'OpenDotletSupportSubdirectory':'OpenDotlet/Alpha/Keyboard','NSBluetoothAlwaysUsageDescription':'Optional development device support.'}
         with (contents/'Info.plist').open('wb') as f:plistlib.dump(info,f)
         run('codesign','--force','--options','runtime','--timestamp','--sign',args.identity or '-',app)
         run('codesign','--verify','--deep','--strict','--verbose=2',app)
