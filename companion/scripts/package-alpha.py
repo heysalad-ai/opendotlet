@@ -12,7 +12,7 @@ import sys
 import sysconfig
 import zipfile
 
-VERSION = '0.6.0-alpha.1'
+VERSION = '0.6.0-alpha.2'
 ROOT = Path(__file__).resolve().parents[1]
 
 
@@ -31,7 +31,9 @@ def main():
     command=[sys.executable,'-m','PyInstaller','--noconfirm','--clean','--onedir','--name',name,
              '--distpath',str(out/'runtime'),'--workpath',str(out/'work'),'--specpath',str(out/'spec'),
              '--collect-submodules','serial','--add-data',str(ROOT/'tools/desktop-ui')+os.pathsep+'desktop-ui']
-    if mac and args.identity:command+=['--codesign-identity',args.identity]
+    if mac:
+        command+=['--windowed','--osx-bundle-identifier','com.heysalad.opendotlet.host']
+        if args.identity:command+=['--codesign-identity',args.identity]
     command+=[str(ROOT/'tools/dotlet_runtime.py')]
     run(*command)
     package=out/'package';package.mkdir()
@@ -42,11 +44,18 @@ def main():
         # SwiftPM's --show-bin-path is independent of Xcode's local build layout.
         binary=Path(subprocess.check_output(['swift','build','--package-path',str(ROOT/'macOS'),'-c','release','--show-bin-path'],text=True).strip())/'OpenDotlet'
         shutil.copy2(binary,contents/'MacOS/OpenDotlet')
-        shutil.copytree(out/'runtime'/name,resources/'Runtime')
+        helper=contents/'Helpers/OpenDotletHost.app'
+        # A nested .app keeps executable code out of the outer Resources tree.
+        shutil.copytree(out/'runtime'/(name+'.app'),helper,symlinks=True)
+        # PyInstaller's loader uses Frameworks; redundant dylib links in
+        # Resources trigger Apple's bundle-structure preflight warnings.
+        for link in (helper/'Contents/Resources').glob('*.dylib'):
+            if link.is_symlink():link.unlink()
+        run('codesign','--force','--options','runtime','--timestamp','--sign',args.identity or '-',helper)
         shutil.copytree(ROOT/'assets/Peel',resources/'Peel')
         shutil.copy2(ROOT/'assets/AppIcon.icns',resources/'AppIcon.icns')
         shutil.copy2(ROOT/'macOS/NICEDECK-LICENSE',resources/'NICEDECK-LICENSE')
-        info={'CFBundleName':'OpenDotlet','CFBundleDisplayName':'OpenDotlet','CFBundleIdentifier':'com.heysalad.opendotlet.mac','CFBundleExecutable':'OpenDotlet','CFBundlePackageType':'APPL','CFBundleIconFile':'AppIcon','CFBundleShortVersionString':'0.6.0','CFBundleVersion':'7','LSMinimumSystemVersion':'14.0','NSHighResolutionCapable':True,'NSPrincipalClass':'NSApplication','OpenDotletPortable':True,'OpenDotletSupportSubdirectory':'OpenDotlet/Alpha/Keyboard','NSBluetoothAlwaysUsageDescription':'Optional development device support.'}
+        info={'CFBundleName':'OpenDotlet','CFBundleDisplayName':'OpenDotlet','CFBundleIdentifier':'com.heysalad.opendotlet.mac','CFBundleExecutable':'OpenDotlet','CFBundlePackageType':'APPL','CFBundleIconFile':'AppIcon','CFBundleShortVersionString':'0.6.0','CFBundleVersion':'8','LSMinimumSystemVersion':'14.0','NSHighResolutionCapable':True,'NSPrincipalClass':'NSApplication','OpenDotletPortable':True,'OpenDotletSupportSubdirectory':'OpenDotlet/Alpha/Keyboard','NSBluetoothAlwaysUsageDescription':'Optional development device support.'}
         with (contents/'Info.plist').open('wb') as f:plistlib.dump(info,f)
         run('codesign','--force','--options','runtime','--timestamp','--sign',args.identity or '-',app)
         run('codesign','--verify','--deep','--strict','--verbose=2',app)

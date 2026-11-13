@@ -89,8 +89,8 @@ final class KeyboardStore: ObservableObject {
     let executable = FileManager.default.isExecutableFile(atPath: python.path)
       ? python : URL(fileURLWithPath: "/usr/bin/python3")
     let p = Process()
-    if let runtime = Bundle.main.resourceURL?.appendingPathComponent("Runtime/opendotlet-host"),
-       FileManager.default.isExecutableFile(atPath: runtime.path) {
+    let runtime = Bundle.main.bundleURL.appendingPathComponent("Contents/Helpers/OpenDotletHost.app/Contents/MacOS/opendotlet-host")
+    if FileManager.default.isExecutableFile(atPath: runtime.path) {
       p.executableURL = runtime
       p.arguments = ["serve", "--data", root.path]
     } else {

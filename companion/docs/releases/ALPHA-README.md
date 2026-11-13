@@ -1,4 +1,4 @@
-# Open.Dotlet public alpha 0.6.0-alpha.1
+# Open.Dotlet public alpha 0.6.0-alpha.2
 
 Download only from opendotlet.com or github.com/heysalad-ai/opendotlet releases.
 
