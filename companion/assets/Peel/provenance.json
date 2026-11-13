@@ -1,0 +1,38 @@
+{
+  "source": "https://github.com/heysalad-ai/opendotlet/tree/design/design",
+  "commit": "6a18d6394818a84fc573b1777cd9a03c0bcadf8e",
+  "copyright": "2026 HeySalad",
+  "licence": "Artwork licence not selected in source branch; not covered by code MIT licence",
+  "rendering": "Original SVGs rendered deterministically with CairoSVG; no generated artwork",
+  "openai_faces": {
+    "source": "Existing OpenDotlet gallery artwork and packed RGB565 frames",
+    "repository": "heysalad-ai/opendotlet",
+    "commit": "9d8a400",
+    "gallery_crc32": "0x17e57e1a",
+    "licence": "Event-artwork and marks separate from MIT code licence; see reference/face-selector/artwork/README.md"
+  },
+  "source_sha256": {
+    "boot-coral-412.svg": "af1b760e6084ef9004717b877853174759f087f046b57b6d80f8488875b7da84",
+    "boot-ink-412.svg": "5cebdd0c6474cea46503d75cf082d40201194d27fd2857cd5788d43f6346d3d9",
+    "boot-lilac-412.svg": "bea5c1038e592724df71d088555fc8c78882441a108838ec7b66e6003f99697f",
+    "boot-mint-412.svg": "292b440dd1f8923d6cc6d9da86db24ba181394256becca9235dfd7bf7ea56772",
+    "boot-paper-412.svg": "6f73d3c5fa52b0bdde565d42554c99c22f9b2683ec7e9099ea223383dc718de1",
+    "boot-sky-412.svg": "0162cf439845ab540ca77b5ed6b680e5b215860c0a326d95c1d2329315551bf1",
+    "boot-sun-412.svg": "b0fa891bf5427ef5aaee682c6ecd96af87749c9b19ab2b04692b768e45136173",
+    "dotlet-coral.svg": "a103a8e1913da1870126d2b2b27ff0bd4f5fbbf2fd30032cd2ea378d48c42868",
+    "dotlet-ink.svg": "73f31361ee1e8347f435d5fc0412a411b969d88b362b3852840228bf74a59c0f",
+    "dotlet-lilac.svg": "74ee39115c6d3af895124c803508d814432d393d34d3b9bb13eeb136f150508b",
+    "dotlet-mint.svg": "db92e4d4744c0fe56b8d4c1ff2c6cfab2dd64cee7a7b8c2df341ca7fb2e0f1f8",
+    "dotlet-paper.svg": "13714dbce0da491b74ed7662b5997f309126d234bc5d2e79cc2a4abff517f9fd",
+    "dotlet-sky.svg": "cdf27117b50cf028f667911ba93274035fdbbe6f27354dbdaa23de6026cf9c46",
+    "dotlet-sun.svg": "580f207035ff580660c435d70d830fffb180b1210a71124f9c4e7e64258188a6",
+    "state-approval-412.svg": "8b9abed3e7a388344f61a9f0b9ed212e5e73f6d1c609b76ba018638963708179",
+    "state-done-412.svg": "927ecb1531a716f769354fe5e8a303767c96c02bb859ad0e6b9e9a348c1a8ae9",
+    "state-error-412.svg": "23839df25a5305e9b692ca75a2642e5d5c0208e3de188cc7af3c3d5bd8cc6196",
+    "state-idle-412.svg": "af1b760e6084ef9004717b877853174759f087f046b57b6d80f8488875b7da84",
+    "state-listening-412.svg": "c50d1597d6801ca099210ae8a6c4385dc23c39344d7e0ed9d839a3007cc38c1e",
+    "state-offline-412.svg": "31f67065272f632a885eb0af9a438313c1e9c49153bc18c308fc7730de0540af",
+    "state-thinking-412.svg": "b3de7a889090ccfe52b95250dd59e23a09ff5bf0c0258eca4ebb8c94ab08bfab",
+    "state-working-412.svg": "85b1e0de4c9315491b312109a5269d4b7b019e32a3a9003f4ee5f453cd691122"
+  }
+}

@@ -1,0 +1,6 @@
+__pycache__/
+.pytest_cache/
+.venv/
+macOS/.build/
+macOS/.swiftpm/
+.DS_Store

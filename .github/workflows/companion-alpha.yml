@@ -1,0 +1,55 @@
+name: Build companion alpha
+on:
+  push:
+    branches: [codex/downloadable-alpha]
+    paths: ['companion/**', '.github/workflows/companion-alpha.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  windows:
+    runs-on: windows-latest
+    defaults:
+      run:
+        working-directory: companion
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install pinned build dependencies
+        run: python -m pip install -r requirements-build.txt
+      - name: Test local host, read-only execution and access checks
+        run: python -m pytest tools/tests -q
+      - name: Build standalone Windows download
+        run: python scripts/package-alpha.py --output ../windows-build
+      - name: Launch the packaged executable without system Python
+        shell: pwsh
+        run: |
+          $state = Join-Path $env:RUNNER_TEMP 'dotlet-state'
+          $project = Join-Path $env:RUNNER_TEMP 'dotlet-project'
+          New-Item -ItemType Directory -Path $project -Force | Out-Null
+          $exe = (Resolve-Path '../windows-build/package/OpenDotlet/OpenDotlet.exe').Path
+          $proc = Start-Process $exe -ArgumentList @('--no-browser','--data',$state,'--workspace',$project) -PassThru
+          try {
+            for ($i=0; $i -lt 40; $i++) {
+              if (Test-Path "$state/service.json") { break }
+              Start-Sleep -Milliseconds 500
+            }
+            if (-not (Test-Path "$state/service.json")) { throw 'Packaged host did not start' }
+            $manifest = Get-Content "$state/service.json" | ConvertFrom-Json
+            $snapshot = Invoke-RestMethod -Uri "http://127.0.0.1:$($manifest.port)/state" -Headers @{Authorization="Bearer $($manifest.token)"}
+            if (-not $snapshot.runtime.portable) { throw 'Portable runtime missing' }
+            if ($snapshot.dots[0].row -ne 5 -or $snapshot.dots[0].col -ne 6) { throw 'Fresh default mapping is incorrect' }
+            Write-Output 'Packaged Windows runtime started with bundled Python and clean user state.'
+          } finally {
+            Stop-Process -Id $proc.Id -Force -ErrorAction SilentlyContinue
+          }
+      - uses: actions/upload-artifact@v4
+        with:
+          name: OpenDotlet-Windows-x64
+          path: |
+            windows-build/OpenDotlet-*-Windows-x64.zip
+            windows-build/SHA256SUMS.txt
+            windows-build/build.json
+          if-no-files-found: error

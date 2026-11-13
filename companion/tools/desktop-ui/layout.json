@@ -1,0 +1,248 @@
+{
+  "version": 1,
+  "reference": "IMG_7703.HEIC, 13 November 2026",
+  "columns": 6,
+  "rows": 5,
+  "keys": [
+    {
+      "matrixKey": 30,
+      "name": "White OpenAI",
+      "kind": "white-logo",
+      "color": "FFFFFF",
+      "leftEye": "",
+      "rightEye": ""
+    },
+    {
+      "matrixKey": 29,
+      "name": "Green plus",
+      "kind": "face",
+      "color": "91D94D",
+      "leftEye": "+",
+      "rightEye": "+"
+    },
+    {
+      "matrixKey": 28,
+      "name": "Green dots",
+      "kind": "face",
+      "color": "91D94D",
+      "leftEye": "\u2022",
+      "rightEye": "\u2022"
+    },
+    {
+      "matrixKey": 27,
+      "name": "Green equals",
+      "kind": "face",
+      "color": "91D94D",
+      "leftEye": "=",
+      "rightEye": "="
+    },
+    {
+      "matrixKey": 26,
+      "name": "Green plus",
+      "kind": "face",
+      "color": "91D94D",
+      "leftEye": "+",
+      "rightEye": "+"
+    },
+    {
+      "matrixKey": 25,
+      "name": "Black OpenAI",
+      "kind": "black-logo",
+      "color": "15191D",
+      "leftEye": "",
+      "rightEye": ""
+    },
+    {
+      "matrixKey": 24,
+      "name": "Cyan stars",
+      "kind": "face",
+      "color": "65CFE8",
+      "leftEye": "*",
+      "rightEye": "*"
+    },
+    {
+      "matrixKey": 23,
+      "name": "Orange calm",
+      "kind": "face",
+      "color": "ED996D",
+      "leftEye": "\u2212",
+      "rightEye": "\u2212"
+    },
+    {
+      "matrixKey": 22,
+      "name": "Orange cross",
+      "kind": "face",
+      "color": "ED996D",
+      "leftEye": "\u00d7",
+      "rightEye": "\u00d7"
+    },
+    {
+      "matrixKey": 21,
+      "name": "Blue calm",
+      "kind": "face",
+      "color": "54A8EE",
+      "leftEye": "\u2572",
+      "rightEye": "\u2571"
+    },
+    {
+      "matrixKey": 20,
+      "name": "Blue squeeze",
+      "kind": "face",
+      "color": "54A8EE",
+      "leftEye": ">",
+      "rightEye": "<"
+    },
+    {
+      "matrixKey": 19,
+      "name": "Black key",
+      "kind": "blank",
+      "color": "252A30",
+      "leftEye": "",
+      "rightEye": ""
+    },
+    {
+      "matrixKey": 18,
+      "name": "Cyan smile",
+      "kind": "face",
+      "color": "65CFE8",
+      "leftEye": "\u222a",
+      "rightEye": "\u222a"
+    },
+    {
+      "matrixKey": 17,
+      "name": "Orange angled",
+      "kind": "face",
+      "color": "ED996D",
+      "leftEye": "\u2571",
+      "rightEye": "\u2572"
+    },
+    {
+      "matrixKey": 16,
+      "name": "Orange surprise",
+      "kind": "face",
+      "color": "ED996D",
+      "leftEye": "O",
+      "rightEye": "O"
+    },
+    {
+      "matrixKey": 15,
+      "name": "Blue cross",
+      "kind": "face",
+      "color": "54A8EE",
+      "leftEye": "\u00d7",
+      "rightEye": "\u00d7"
+    },
+    {
+      "matrixKey": 14,
+      "name": "Blue squeeze",
+      "kind": "face",
+      "color": "54A8EE",
+      "leftEye": ">",
+      "rightEye": "<"
+    },
+    {
+      "matrixKey": 13,
+      "name": "Black key",
+      "kind": "blank",
+      "color": "252A30",
+      "leftEye": "",
+      "rightEye": ""
+    },
+    {
+      "matrixKey": 12,
+      "name": "Cyan arches",
+      "kind": "face",
+      "color": "65CFE8",
+      "leftEye": "\u2229",
+      "rightEye": "\u2229"
+    },
+    {
+      "matrixKey": 11,
+      "name": "Pink surprise",
+      "kind": "face",
+      "color": "E9B3D1",
+      "leftEye": "o",
+      "rightEye": "o"
+    },
+    {
+      "matrixKey": 10,
+      "name": "Pink down",
+      "kind": "face",
+      "color": "E9B3D1",
+      "leftEye": "\u2228",
+      "rightEye": "\u2228"
+    },
+    {
+      "matrixKey": 9,
+      "name": "Purple calm",
+      "kind": "face",
+      "color": "AE83DC",
+      "leftEye": "\u00ac",
+      "rightEye": "\u00ac"
+    },
+    {
+      "matrixKey": 8,
+      "name": "Purple surprise",
+      "kind": "face",
+      "color": "AE83DC",
+      "leftEye": "O",
+      "rightEye": "O"
+    },
+    {
+      "matrixKey": 7,
+      "name": "Black key",
+      "kind": "blank",
+      "color": "252A30",
+      "leftEye": "",
+      "rightEye": ""
+    },
+    {
+      "matrixKey": 6,
+      "name": "Cyan stars",
+      "kind": "face",
+      "color": "65CFE8",
+      "leftEye": "*",
+      "rightEye": "*"
+    },
+    {
+      "matrixKey": 5,
+      "name": "Pink happy",
+      "kind": "face",
+      "color": "E9B3D1",
+      "leftEye": "^",
+      "rightEye": "^"
+    },
+    {
+      "matrixKey": 4,
+      "name": "Pink happy",
+      "kind": "face",
+      "color": "E9B3D1",
+      "leftEye": "^",
+      "rightEye": "^"
+    },
+    {
+      "matrixKey": 3,
+      "name": "Purple wink",
+      "kind": "face",
+      "color": "AE83DC",
+      "leftEye": "O",
+      "rightEye": "\u00ac"
+    },
+    {
+      "matrixKey": 2,
+      "name": "Purple wink",
+      "kind": "face",
+      "color": "AE83DC",
+      "leftEye": "\u00ac",
+      "rightEye": "O"
+    },
+    {
+      "matrixKey": 1,
+      "name": "Embossed OpenAI",
+      "kind": "embossed-logo",
+      "color": "252A30",
+      "leftEye": "",
+      "rightEye": ""
+    }
+  ]
+}
