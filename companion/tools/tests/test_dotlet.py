@@ -122,7 +122,7 @@ class DotTests(unittest.TestCase):
         path = self.root / 'codex'
         path.write_text('#!' + sys.executable + '\n' + body)
         path.chmod(0o700)
-        self.host.executable = str(path)
+        self.host.executable = [sys.executable, str(path)]
 
     def wait_job(self):
         until = time.monotonic() + 5
