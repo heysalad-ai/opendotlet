@@ -1,5 +1,11 @@
 # Third-party notices
 
+## Portable saved-task alpha runtime
+
+The downloadable 0.6.0 alpha bundles CPython 3.12, pyserial 3.5 (BSD), and the PyInstaller bootloader (GPL with its bootloader exception). Full runtime notices are included in the archive's `licenses` directory. The Python runtime licence is copied from the interpreter used for each platform build. No Codex binary, account, API key, Ambi engine, speech model or private state is redistributed.
+
+The public alpha's native Mac interface and Windows local browser companion expose saved read-only tasks and USB connection. The Mac release uses a separate `OpenDotlet/Alpha/Keyboard` data directory. The established software MIT notice does not relicense HeySalad artwork or third-party marks. The owner has authorized distribution of the existing Peel identity with this companion; OpenAI/event artwork and marks retain their respective rights and are not an endorsement.
+
 The native Mac app is adapted from [HeySalad NiceDeck](https://github.com/heysalad-ai/nicedeck) at commit `2bb5203218e88f2993ec0d96dcd997d3ba86e96e`. The original project was named OpenStreamDeck. Its MIT copyright notice is retained in `macOS/NICEDECK-LICENSE` and copied into the application bundle. The SwiftUI window shell, visual tokens, button style and app-store organization were adapted for OpenDotlet. Its ESP32 touchscreen firmware and host action executor are not part of the Dotlet application.
 
 Silicon Labs' MIT notice is retained in the official `ezWS2812gpio.h` source copied into each sketch. `SilabsMicrophoneAnalog`, the BLE stack and other core components are supplied by the installed Silicon Labs Arduino core 4.0.0 and retain their respective upstream licences.

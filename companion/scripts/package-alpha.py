@@ -9,6 +9,7 @@ import plistlib
 import shutil
 import subprocess
 import sys
+import sysconfig
 import zipfile
 
 VERSION = '0.6.0-alpha.1'
@@ -63,6 +64,12 @@ def main():
     for source in ('LICENSE','THIRD_PARTY_NOTICES.md'):
         path=ROOT/source
         if path.exists():shutil.copy2(path,package/source)
+    shutil.copytree(ROOT/'docs/releases/licenses',package/'licenses')
+    for candidate in (Path(sys.base_prefix)/'LICENSE.txt',Path(sysconfig.get_path('stdlib'))/'LICENSE.txt'):
+        if candidate.exists():
+            shutil.copy2(candidate,package/'licenses/Python.txt')
+            break
+    else: raise RuntimeError('Python runtime licence was not found')
     if mac:
         archive.unlink()
         run('ditto','-c','-k','--sequesterRsrc',package,archive)
