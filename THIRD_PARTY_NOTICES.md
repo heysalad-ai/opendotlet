@@ -27,3 +27,8 @@ ESP-IDF and its included components retain their upstream licenses. It is not ve
 ## Artwork
 
 See `artwork/README.md`. Event-inspired reconstructions and OpenAI marks are not included in the MIT code license. No official sponsorship or endorsement is implied.
+
+
+## Keypad and companion product images
+
+The README now includes project-approved product photographs, actual companion screenshots, the neutral HeySalad Peel identity and a workflow illustration. These assets are not relicensed by the MIT code licence. Third-party event/OpenAI marks retain their respective rights and do not imply affiliation or endorsement. See [media provenance](docs/media/README.md) and the [companion release notices](https://github.com/heysalad-ai/opendotlet/blob/v0.6.0-alpha.2/companion/THIRD_PARTY_NOTICES.md).

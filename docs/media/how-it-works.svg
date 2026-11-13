@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="480" viewBox="0 0 1400 480" role="img" aria-labelledby="title desc">
+<title id="title">Open.Dotlet: one key, one saved Codex task</title><desc id="desc">A physical key press travels over USB to the local Open.Dotlet service, which runs a saved read-only Codex task. The result returns to the Agent team view. The public alpha provides native Mac and local Windows browser interfaces; additional developer adapters are experimental.</desc>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 10 5 0 10" fill="#111312"/></marker></defs>
+<rect width="1400" height="480" rx="16" fill="#ffffff"/>
+<g font-family="Arial,Helvetica,sans-serif" fill="#111312">
+<text x="52" y="68" font-size="34" font-weight="700">A little dotlet. A useful task.</text>
+<text x="52" y="103" font-size="19" fill="#5d655f">Saved read-only task flow · physical press or on-screen Run task</text>
+<g stroke="#111312" stroke-width="2">
+<rect x="52" y="150" width="240" height="170" rx="14" fill="#a4d866"/>
+<rect x="390" y="150" width="270" height="170" rx="14" fill="#ffffff"/>
+<rect x="760" y="150" width="245" height="170" rx="14" fill="#ffffff"/>
+<rect x="1105" y="150" width="243" height="170" rx="14" fill="#f3f5f3"/>
+<path d="M306 235H374M674 235H744M1019 235H1089" fill="none" marker-end="url(#arrow)"/>
+</g>
+<g font-size="24" font-weight="700">
+<text x="76" y="197">Press a dotlet</text><text x="414" y="197">Open.Dotlet service</text><text x="784" y="197">Codex</text><text x="1129" y="197">See the result</text>
+</g>
+<g font-size="19">
+<text x="76" y="239">One physical key</text><text x="76" y="272">USB · fresh press</text>
+<text x="414" y="239">Saved task + project</text><text x="414" y="272">One run at a time</text>
+<text x="784" y="239">Existing sign-in</text><text x="784" y="272">Read-only project</text>
+<text x="1129" y="239">Agent team view</text><text x="1129" y="272">Progress + history</text>
+</g>
+<path d="M520 333V371" stroke="#5d655f" stroke-width="2"/>
+<text x="52" y="414" font-size="19">Public alpha: macOS app · Windows local browser companion · one saved task at a time</text>
+<text x="52" y="448" font-size="16" fill="#5d655f">OpenPromptlet is the separate four-knob / round-screen project. Inter-module control remains in development.</text>
+</g></svg>

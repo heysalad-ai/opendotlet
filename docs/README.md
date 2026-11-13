@@ -1,3 +1,14 @@
+# Current project documentation
+
+- [Open.Dotlet overview and downloads](../README.md)
+- [Detailed development timeline](TIMELINE.md)
+- [Phased roadmap and acceptance criteria](ROADMAP.md)
+- [Public alpha release status](RELEASE-STATUS.md)
+- [Media provenance](media/README.md)
+- [OpenPromptlet controller](https://github.com/heysalad-ai/openpromptlet)
+
+The material below describes the earlier round-display gallery; its flashing instructions do not target the keypad.
+
 # OpenDotlet documentation
 
 | Start here | Purpose |

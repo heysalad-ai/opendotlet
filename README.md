@@ -1,197 +1,106 @@
 <div align="center">
 
-# OpenDotlet
+<img src="docs/media/peel-neutral.png" alt="Open.Dotlet Peel identity" width="76">
 
-**A little round display with a lot of personality.**
+# Open.Dotlet
 
-Expressive hardware for OpenAI-powered agents, built in public by [HeySalad](https://github.com/heysalad-ai).
+**Give your favourite prompts a button.**
 
-[![Build firmware](https://github.com/heysalad-ai/opendotlet/actions/workflows/build.yml/badge.svg)](https://github.com/heysalad-ai/opendotlet/actions/workflows/build.yml) [![Code license: MIT](https://img.shields.io/badge/code-MIT-15734b.svg)](LICENSE) [![Hardware: ESP32-S3](https://img.shields.io/badge/hardware-ESP32--S3-252525.svg)](docs/HARDWARE.md)
+A build-your-own, 30-key prompting tablet for saved Codex tasks. Made by [HeySalad](https://github.com/heysalad-ai).
 
-**[Quickstart](docs/QUICKSTART.md) · [Gallery](#gallery-preview) · [Hardware](#hardware) · [Architecture](#project-architecture) · [Roadmap](docs/ROADMAP.md) · [Contribute](CONTRIBUTING.md)**
+**[Website](https://opendotlet.com) · [Download](https://github.com/heysalad-ai/opendotlet/releases/tag/v0.6.0-alpha.2) · [Product Hunt](https://www.producthunt.com/products/open-dotlet) · [Timeline](docs/TIMELINE.md) · [Roadmap](docs/ROADMAP.md)**
 
-**Running today: the offline touch gallery.** Live voice, Decisions, image generation and a multi-device UI are planned integrations.
+<img src="docs/media/opendotlet-product.png" alt="The actual Open.Dotlet prototype with 30 colourful round keys" width="650">
 
-<a href="docs/preview-black.png"><img src="docs/preview-black.png" alt="OpenDotlet black-background gallery: 28 exported round-screen views, including upright blue U-eye faces" width="1000"></a>
+OpenAI Dev Day Exchange Edition — inspired by event swag and a simple idea: make useful prompts tangible.
 
+<sub>Actual product photo, with AI background removal. Independent HeySalad project; not affiliated with or endorsed by OpenAI.</sub>
 
 </div>
 
-## News
+## Try it today
 
-- **6 November 2026:** OpenDotlet is public under HeySalad, with working firmware, pinned dependencies and GitHub build checks.
-- **6 November 2026:** Both individual cyan/blue smile faces now have upright **U U** eyes. Seven asset tests include orientation and unchanged-frame checks.
-- **Next milestone:** a small OpenAI-powered companion connecting **GPT-Live + Decisions + Images** to the physical display. See the [implementation roadmap](docs/ROADMAP.md).
+Run the first saved task **without a keypad**. Open.Dotlet uses your own Codex CLI installation and sign-in. Python is included in both downloads.
 
-## What is OpenDotlet?
+| Platform | Download | Requirements and signing |
+| --- | --- | --- |
+| macOS | [Mac alpha ZIP](https://github.com/heysalad-ai/opendotlet/releases/download/v0.6.0-alpha.2/OpenDotlet-0.6.0-alpha.2-macOS-AppleSilicon.zip) | Apple Silicon, macOS 14+. Native app, Developer ID signed and Apple notarized. |
+| Windows | [Signed Windows alpha ZIP](https://github.com/heysalad-ai/opendotlet/releases/download/v0.6.0-alpha.2/OpenDotlet-0.6.0-alpha.2-Windows-x64-Signed.zip) | Windows 11 x64. Launcher signed as **HeySalad Inc.** with Azure Artifact Signing and a trusted Microsoft timestamp. Local browser companion. |
 
-OpenDotlet turns a **Waveshare ESP32-S3-Touch-LCD-1.46** into a pocket gallery of expressive dots. The current release runs entirely on the board: no account, Wi-Fi configuration or API key needed. Tap to advance; hold to toggle the slideshow.
+1. Install the current [Codex CLI](https://learn.chatgpt.com/docs/codex/cli) and sign in.
+2. On Mac, unzip and drag `OpenDotlet.app` into Applications. On Windows, extract the **whole** ZIP, open `OpenDotlet/OpenDotlet.exe`, and keep its launcher console open.
+3. Select the white-logo dotlet. Edit its project folder if needed, then choose **Run task**.
+4. Read progress and the completed response beside your dotlets.
 
-The product direction is a physical interface for agents: talk to a Dotlet, see useful reactions and task status, personalize its appearance, and assign profiles to multiple devices. Those capabilities will be added in verified stages.
+The starter task asks: “Summarise the current project and suggest three next steps; do not change files or run external actions.” One saved read-only task runs at a time. Your Codex account's normal access and usage limits apply; no account, API key or subscription is included.
 
-- [Build and flash your first Dotlet](docs/QUICKSTART.md)
-- [Make your own face pack](docs/CUSTOMIZATION.md)
-- [Understand the running firmware and proposed platform](docs/ARCHITECTURE.md)
-- [Follow the roadmap](docs/ROADMAP.md)
+[Setup and release notes](https://github.com/heysalad-ai/opendotlet/releases/tag/v0.6.0-alpha.2) · [Checksums](https://github.com/heysalad-ai/opendotlet/releases/download/v0.6.0-alpha.2/SHA256SUMS.txt) · [Companion source](https://github.com/heysalad-ai/opendotlet/tree/v0.6.0-alpha.2/companion)
 
-## Gallery preview
+## Your dotlets
 
-The image above shows the actual exported artwork used by the firmware. It is a contact sheet, not a recording of a physical board. The gallery has been flashed and exercised on the supported board; see [verification](docs/VERIFICATION.md) and the [U-eye correction](docs/U-EYES-FIX.md).
+Each little face is a task binding: give it a saved prompt and project, then use its on-screen control or physical key. The illustrated map matches the photographed 6×5 keypad.
 
-There are **28 full-screen views**: 24 individual faces/logos, two reference sheets and two Build graphics. Choose black or light backgrounds when building.
+<img src="docs/media/mac-alpha.png" alt="The downloadable Mac alpha: matching 30-key map, Project summary task and result area" width="1100">
+
+*The downloadable Mac alpha. Thirty key positions, one starter assignment; the result area is empty until a task runs.*
 
 <details>
-<summary><strong>View the light theme</strong></summary>
-<br>
-<img src="docs/preview-light.png" alt="OpenDotlet light-background gallery with upright U-eye blue faces" width="1000">
+<summary>See a completed result from the earlier working prototype</summary>
 
-The sheet-reference views retain white paper. Themes are build-time choices; runtime switching is planned separately.
+<img src="docs/media/prototype-result.png" alt="Earlier development app showing a completed saved Codex task beside the keypad map" width="1100">
+
+This is a real development-app screenshot. Its additional voice and advanced-agent navigation is outside the downloadable saved-task alpha.
 </details>
 
-A real-device video is still to be recorded. The intended demo will show the physical board, touch controls and normal playback. Future voice demonstrations will include audible, captioned footage and identify where the microphone and speaker run.
+![Keypad to saved task to Codex to result](docs/media/how-it-works.svg)
 
-## OpenAI integrations
+## Available now and next
 
-These are the **required next integration tracks**, not features already running in this release:
-
-| Integration | Role in OpenDotlet | Status |
-| --- | --- | --- |
-| [GPT-Live](https://developers.openai.com/api/docs/guides/live) | Spoken conversation while backend work runs | Planned |
-| [Decisions API](https://developers.openai.com/api/docs/guides/decisions-voice) | Bounded actions and expressive reactions from live conversation events | Planned |
-| [Images](https://developers.openai.com/api/docs/guides/image-generation) | Personalized faces/scenes with preview and verified installation | Planned |
-| Responses and function calling | Useful tools and confirmed device actions | Planned |
-| Agents, retrieval and optional MCP/plugins | Responsibilities, knowledge and connected tools | Later modules |
-
-The first proposed workflow is a spoken appearance request → bounded decision → generated artwork → reviewed/exported asset → confirmed physical display. Ordinary reactions use cached artwork.
-
-Future API mode will use a dedicated OpenAI project credential on the trusted companion/server. Devices receive separate scoped identities. A project key does not grant access to private GitHub, Gmail or a person's existing ChatGPT dot; those connections require their own authorization.
-
-## Hardware
-
-| Part | Current supported configuration |
+| Available in the public alpha | Planned or needs more validation |
 | --- | --- |
-| Board | Waveshare ESP32-S3-Touch-LCD-1.46 |
-| Display and touch | SPD2010, 412 × 412 round LCD |
-| Flash / PSRAM | 16 MB / 8 MB octal |
-| Power and programming | USB data cable |
-| Framework | ESP-IDF 5.3.2 + LVGL 8.3.11 |
-| Gallery artwork | Full-screen RGB565, black/light themes |
+| Saved read-only tasks, editable assignments and results/history | General writable workflows and independent concurrent agents |
+| Native Mac app and Windows local browser companion | Packaged Chrome extension and supported plugin installation |
+| Illustrated 30-key map, starter task, cancel/pause controls | Rich task-status lighting and shareable workflow packs |
+| USB connection support; earlier prototype key-to-Codex flow demonstrated | Fresh full USB-to-provider acceptance on the portable Windows release |
+| Signed downloads; bundled local Python runtime | Direct API-key keypad execution and clean-machine onboarding |
 
-The onboard microphone, speaker and battery functionality have **not** been validated by this gallery. Similar-looking boards, including the 1.8-inch AMOLED model, need separate drivers/ports.
+The keypad prototype's 30 press/release positions were tested on 13 November. The white-logo key ran a real read-only Codex task and showed its result in the Mac development app. The signed Windows download passed clean-state startup, UI and authenticated local-API checks; that is separate from the remaining Windows hardware test.
 
-[Hardware and pin notes](docs/HARDWARE.md) · [Vendor documentation](https://docs.waveshare.com/ESP32-S3-Touch-LCD-1.46)
+[Detailed release evidence](docs/RELEASE-STATUS.md) · [Development timeline](docs/TIMELINE.md) · [Roadmap and completion criteria](docs/ROADMAP.md)
 
-## Feature list
+## Two projects, one modular idea
 
-| Feature | Working now | Planned work |
-| --- | --- | --- |
-| Full-screen expressions | 28 exported views | Original white/black/color face families |
-| Touch controls | Tap next/pause; hold auto/pause | Context-aware controls |
-| Playback | Automatic seven-second cadence | Event-driven expressions |
-| Serial interface | `NEXT`, `PREV`, `PAUSE`, `AUTO`, `STATUS` | Bounded companion protocol |
-| Custom artwork | Source atlases and deterministic export | Generated-asset staging and activation |
-| Verification | Asset tests, firmware CI and recorded board checks | Voice, recovery, latency and two-device tests |
-| Voice and tool use | — | GPT-Live, Decisions and useful functions |
-| Device management | — | Pairing, profiles, revocation and explicit session ownership |
-| Images API | — | Generate/edit → preview → export → install |
+**Open.Dotlet** is the keypad and saved-task companion. **[OpenPromptlet](https://github.com/heysalad-ai/openpromptlet)** is the separate four-knob, round-screen controller. Each is intended to be useful alone; attaching them into one device and sharing task state remain development work.
 
-## Project architecture
+This repository also preserves the earlier ESP32-S3 round-display gallery: [firmware quickstart](docs/QUICKSTART.md), [artwork customization](docs/CUSTOMIZATION.md) and [historical README](docs/legacy/ROUND-DISPLAY-README.md). These are a distinct firmware track, not keypad flashing instructions.
 
-**Running gallery**
+## Timeline and roadmap at a glance
 
-```mermaid
-flowchart LR
-    Art[Source atlases] --> Export[Export and validate]
-    Export --> Firmware[ESP-IDF firmware]
-    Firmware --> Dotlet[Round display]
-    Touch[Touch / serial] --> Dotlet
-```
+| Milestone | Status |
+| --- | --- |
+| August 2026 — early physical AI control-deck concept | Historical design brief |
+| 6–12 November — round-display groundwork, control experiments and modular direction | Prototype/source milestones |
+| 13 November — 30-key test, physical saved-task run and Agent team interface | Demonstrated on the development setup |
+| 13 November — public Mac and signed Windows alpha.2 | Released and download-verified |
+| 14 November, 08:01 GMT — Product Hunt launch | Scheduled by Product Hunt |
+| Next — onboarding, clean-machine and hardware reliability | Planned first milestone |
+| Then — mappings, CLI/plugins, Chrome, API-key mode and modular feedback | Proposed phased roadmap |
 
-**Planned agent platform**
+The [full timeline](docs/TIMELINE.md) explains the decisions and evidence. The [roadmap](docs/ROADMAP.md) gives indicative windows, deliverables, dependencies and acceptance checks; future dates are targets, not shipping promises.
 
-```mermaid
-flowchart TD
-    UI[Setup UI: devices and profiles] --> Gateway[Trusted companion / gateway]
-    Device[Dotlet] <-->|Scoped state, audio and artwork| Gateway
-    Gateway --> Live[GPT-Live]
-    Live --> Decisions[Decisions actions and reactions]
-    Gateway --> Images[Images generation and editing]
-    Gateway --> Tools[Responses and authorized tools]
-```
+## Source and contributions
 
-The gateway and setup UI are not implemented yet. No hosting vendor, web framework or database is required by the current gallery. See the [architecture guide](docs/ARCHITECTURE.md) for component and credential boundaries.
-
-## Tech stack
-
-| Layer | Today | Next stage |
-| --- | --- | --- |
-| Firmware | C, ESP-IDF 5.3.2 | Device protocol and measured audio |
-| Display | LVGL 8.3.11, Waveshare SPD2010 support | Event-driven state and asset activation |
-| Assets | Python, Pillow, RGB565 | Validated generated-art pipeline |
-| Verification | Python unittest, GitHub Actions, serial smoke tool | Session replay, failure and latency checks |
-| Companion / UI | Not implemented | Local gateway first; framework selection pending |
-| OpenAI | Not needed by gallery | Live, Decisions, Images and selected tools |
-
-## Project structure
-
-```text
-opendotlet/
-├── main/                 # Gallery application and generated descriptors
-├── artwork/              # Source atlases, reference sheets and provenance
-├── tools/                # Bootstrap, export, validation and serial checks
-├── tests/                # Artwork regression and failure-path checks
-├── docs/                 # Setup, hardware, architecture and roadmap
-├── .github/workflows/    # Firmware build checks
-├── dependencies.json     # Pinned upstream sources and checksums
-└── sdkconfig.defaults    # Supported ESP32-S3 configuration
-```
-
-Generated assets, downloaded board support, build output and private backups are excluded from Git. Upstream components retain their own notices.
-
-## Quickstart
-
-Activate ESP-IDF 5.3.2, then:
+The downloadable companion's exact source is under the **alpha.2 release tag**, in `companion/`. The default branch retains the round-gallery source and current project documentation.
 
 ```sh
-git clone https://github.com/heysalad-ai/opendotlet.git
-cd opendotlet
-python -m pip install -r requirements.txt
-python tools/bootstrap.py
-python tools/pack_assets.py --theme black
-python tools/validate_assets.py
-python -m unittest discover -s tests -v
-idf.py set-target esp32s3
-idf.py build
+git clone --branch v0.6.0-alpha.2 https://github.com/heysalad-ai/opendotlet.git
+cd opendotlet/companion
 ```
 
-Identify your board's serial port and back up any firmware/data you want to retain before flashing:
+Start with [companion setup](https://github.com/heysalad-ai/opendotlet/blob/v0.6.0-alpha.2/companion/docs/releases/ALPHA-README.md), [contributing](CONTRIBUTING.md), or an [issue](https://github.com/heysalad-ai/opendotlet/issues). Useful contributions include reproducible setup reports, accessible key editing, USB recovery, original icon packs and verified build instructions. Include your OS, app version, board/firmware version and observed result. Keep keys, recordings and private project contents out of reports.
 
-```sh
-idf.py -p YOUR_PORT flash monitor
-```
+## License and credits
 
-[Full setup, controls and troubleshooting](docs/QUICKSTART.md) · [Customize artwork](docs/CUSTOMIZATION.md)
+Original application code is [MIT licensed](LICENSE). The Mac shell retains NiceDeck/OpenStreamDeck attribution; bundled runtimes retain their upstream licences. Peel artwork, event artwork and third-party marks have separate rights: see [companion notices](https://github.com/heysalad-ai/opendotlet/blob/v0.6.0-alpha.2/companion/THIRD_PARTY_NOTICES.md) and [gallery notices](THIRD_PARTY_NOTICES.md). ElatoAI helped inspire the earlier gallery documentation structure.
 
-## Verification and limitations
-
-- The exact Waveshare 1.46-inch board is the tested target. Other board variants are unverified.
-- CI builds firmware and validates assets; it cannot prove physical touch, appearance or audio quality.
-- Themes and artwork are compiled into firmware. Dynamic downloads, OTA updates, Wi-Fi setup and remote controls are not implemented.
-- Voice, Decisions, Images API, profile management and persistent agents remain planned. No voice latency or battery-runtime result is claimed.
-- The source artwork is a reconstruction, not an official asset pack.
-
-[Initial evidence](docs/VERIFICATION.md) · [Latest artwork checks](docs/U-EYES-FIX.md) · [Security](SECURITY.md)
-
-## Contributing
-
-Start with documentation, original artwork, supported-board fixes or a focused roadmap milestone. Describe the board and checks you ran. Keep model/API access, secrets, hardware behavior and production readiness explicit.
-
-[Contribution guide](CONTRIBUTING.md) · [Open an issue](https://github.com/heysalad-ai/opendotlet/issues) · [Roadmap](docs/ROADMAP.md)
-
-## Acknowledgments and license
-
-[ElatoAI](https://github.com/akdeb/ElatoAI) inspired this product-first repository structure and is an important ESP32 voice-project reference. OpenDotlet's artwork, firmware and proposed OpenAI-only integration plan are documented here independently. OpenDotlet has not been accepted into the OpenAI Cookbook.
-
-HeySalad's original application code is **MIT licensed**. Downloaded vendor support, included artwork and third-party trademarks have separate terms. This independent HeySalad project is not affiliated with or endorsed by OpenAI.
-
-[Code license](LICENSE) · [Artwork terms](artwork/README.md) · [Third-party notices](THIRD_PARTY_NOTICES.md)
+Open.Dotlet is a build-your-own project and public alpha, not an offer to ship finished hardware. It is not an official OpenAI product or an accepted OpenAI Cookbook project.
