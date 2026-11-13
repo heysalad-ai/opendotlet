@@ -174,6 +174,17 @@ def main():
     parser.add_argument('--workspace', type=Path)
     parser.add_argument('--no-browser', action='store_true', help='Start without opening the browser (verification only)')
     args = parser.parse_args()
+    if args.mode == 'desktop' and not args.no_browser:
+        try:
+            dotlet.request('/state', root=args.data)
+            existing = json.loads((args.data / 'ui-service.json').read_text())
+            port = existing['port']
+            if not isinstance(port, int) or not 1 <= port <= 65535:
+                raise ValueError('Invalid local window')
+            webbrowser.open(f"http://127.0.0.1:{port}/#{existing['token']}")
+            return
+        except (OSError, ValueError, KeyError):
+            pass
     workspace = args.workspace or default_workspace()
     host, api, lock = start_host(args.data, workspace)
     stopped = threading.Event()
@@ -187,6 +198,7 @@ def main():
             token = secrets.token_urlsafe(32)
             assets = resources() / 'desktop-ui'
             ui = ThreadingHTTPServer(('127.0.0.1', 0), ui_handler(args.data, assets, token))
+            dotlet.write_private(args.data / 'ui-service.json', {'port': ui.server_port, 'token': token})
             threading.Thread(target=ui.serve_forever, daemon=True).start()
             url = f'http://127.0.0.1:{ui.server_port}/#{token}'
             if not args.no_browser:
@@ -201,6 +213,7 @@ def main():
             if server:
                 server.shutdown(); server.server_close()
         (args.data / 'service.json').unlink(missing_ok=True)
+        (args.data / 'ui-service.json').unlink(missing_ok=True)
         lock.close()
 
 

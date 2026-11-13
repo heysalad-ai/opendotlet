@@ -1,6 +1,8 @@
 'use strict';
 const $=id=>document.getElementById(id);
-const token=location.hash.slice(1); history.replaceState(null,'',location.pathname);
+const token=location.hash.slice(1)||sessionStorage.getItem('dotlet-session');
+if(token)sessionStorage.setItem('dotlet-session',token);
+history.replaceState(null,'',location.pathname);
 let state=null,selected=30,dirty=false,selectedRun=null,layout=[];
 async function api(route,body){const r=await fetch('/api/'+route,{method:body===undefined?'GET':'POST',headers:{Authorization:'Bearer '+token,'Content-Type':'application/json'},body:body===undefined?undefined:JSON.stringify(body)});const data=await r.json();if(!r.ok)throw Error(data.error||'Local service unavailable');return data;}
 function dot(){return state?.dots.find(d=>(d.row-1)*6+d.col===selected)}

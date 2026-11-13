@@ -41,7 +41,17 @@ jobs:
             $snapshot = Invoke-RestMethod -Uri "http://127.0.0.1:$($manifest.port)/state" -Headers @{Authorization="Bearer $($manifest.token)"}
             if (-not $snapshot.runtime.portable) { throw 'Portable runtime missing' }
             if ($snapshot.dots[0].row -ne 5 -or $snapshot.dots[0].col -ne 6) { throw 'Fresh default mapping is incorrect' }
-            Write-Output 'Packaged Windows runtime started with bundled Python and clean user state.'
+            $window = Get-Content "$state/ui-service.json" | ConvertFrom-Json
+            $windowRoot = "http://127.0.0.1:$($window.port)"
+            $page = Invoke-WebRequest -Uri "$windowRoot/"
+            if ($page.StatusCode -ne 200 -or $page.Content -notmatch 'Open.Dotlet') { throw 'Bundled companion UI is missing' }
+            $js = Invoke-WebRequest -Uri "$windowRoot/app.js"
+            if ($js.StatusCode -ne 200) { throw 'Bundled companion assets are missing' }
+            $anonymous = Invoke-WebRequest -Uri "$windowRoot/api/state" -SkipHttpErrorCheck
+            if ($anonymous.StatusCode -ne 401) { throw 'Window API must require its capability' }
+            $windowState = Invoke-RestMethod -Uri "$windowRoot/api/state" -Headers @{Authorization="Bearer $($window.token)"}
+            if (-not $windowState.runtime.portable) { throw 'Window API did not reach the local host' }
+            Write-Output 'Packaged Windows runtime and browser UI passed with bundled Python and clean user state.'
           } finally {
             Stop-Process -Id $proc.Id -Force -ErrorAction SilentlyContinue
           }
