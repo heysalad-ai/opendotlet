@@ -8,7 +8,7 @@
 
 A build-your-own, 30-key prompting tablet for saved Codex tasks. Made by [HeySalad](https://github.com/heysalad-ai).
 
-**[Website](https://opendotlet.com) · [Download](https://github.com/heysalad-ai/opendotlet/releases/tag/v0.6.0-alpha.2) · [Product Hunt](https://www.producthunt.com/products/open-dotlet) · [Timeline](docs/TIMELINE.md) · [Roadmap](docs/ROADMAP.md)**
+**[Website](https://opendotlet.com) · [Download](https://github.com/heysalad-ai/opendotlet/releases/tag/v0.6.0-alpha.2) · [Product Hunt](https://www.producthunt.com/products/open-dotlet) · [Timeline](docs/TIMELINE.md) · [Roadmap](docs/ROADMAP.md) · [Support](https://buymeacoffee.com/heysalad)**
 
 <img src="docs/media/opendotlet-product.png" alt="The actual Open.Dotlet prototype with 30 colourful round keys" width="650">
 
@@ -98,6 +98,12 @@ cd opendotlet/companion
 ```
 
 Start with [companion setup](https://github.com/heysalad-ai/opendotlet/blob/v0.6.0-alpha.2/companion/docs/releases/ALPHA-README.md), [contributing](CONTRIBUTING.md), or an [issue](https://github.com/heysalad-ai/opendotlet/issues). Useful contributions include reproducible setup reports, accessible key editing, USB recovery, original icon packs and verified build instructions. Include your OS, app version, board/firmware version and observed result. Keep keys, recordings and private project contents out of reports.
+
+## Community and support
+
+Open.Dotlet is an open-source gift to the OpenAI developer community. We’re excited to see your sticker colour combinations and the ideas you bring to this project.
+
+If you’d like to support the project, [buy HeySalad a coffee](https://buymeacoffee.com/heysalad). Ideas, contributions and feedback are welcome whether or not you donate.
 
 ## License and credits
 
