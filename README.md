@@ -14,7 +14,7 @@ A build-your-own, 30-key prompting tablet for saved Codex tasks. Made by [HeySal
 
 OpenAI Dev Day Exchange Edition — inspired by event swag and a simple idea: make useful prompts tangible.
 
-<sub>Actual product photo, with AI background removal. Independent HeySalad project; not affiliated with or endorsed by OpenAI.</sub>
+<sub>Actual product photo, with AI background removal.</sub>
 
 </div>
 
@@ -102,6 +102,8 @@ Start with [companion setup](https://github.com/heysalad-ai/opendotlet/blob/v0.6
 ## Community and support
 
 Open.Dotlet is an open-source gift to the OpenAI developer community. We’re excited to see your sticker colour combinations and the ideas you bring to this project.
+
+Our connection to OpenAI comes through participation in its developer community, hackathons and events, where we obtained the swag that inspired Open.Dotlet. This is an independent HeySalad project and has not been endorsed or approved by OpenAI, formally or informally. We will update this notice if we receive official communication from OpenAI about the project.
 
 If you’d like to support the project, [buy HeySalad a coffee](https://buymeacoffee.com/heysalad). Ideas, contributions and feedback are welcome whether or not you donate.
 
