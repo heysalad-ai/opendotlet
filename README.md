@@ -99,6 +99,8 @@ cd opendotlet/companion
 
 Start with [companion setup](https://github.com/heysalad-ai/opendotlet/blob/v0.6.0-alpha.2/companion/docs/releases/ALPHA-README.md), [contributing](CONTRIBUTING.md), or an [issue](https://github.com/heysalad-ai/opendotlet/issues). Useful contributions include reproducible setup reports, accessible key editing, USB recovery, original icon packs and verified build instructions. Include your OS, app version, board/firmware version and observed result. Keep keys, recordings and private project contents out of reports.
 
+Cookbook contribution: [physical buttons for saved Codex tasks](docs/COOKBOOK_PROPOSAL.md) is proposed in [OpenAI Cookbook issue #3291](https://github.com/openai/openai-cookbook/issues/3291). It is awaiting maintainer scope review; no Cookbook recipe has been accepted or merged.
+
 ## Community and support
 
 Open.Dotlet is an open-source gift to the OpenAI developer community. We’re excited to see your sticker colour combinations and the ideas you bring to this project.
